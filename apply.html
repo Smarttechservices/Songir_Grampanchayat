@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्रामपंचायत सोनगीर</title>
+   
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+     <meta name="google" content="notranslate">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            /* padding: 30px; */
+        }
+
+        .population-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+            .population-card h2 {
+                font-size: 18px;
+                color: #003366;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px solid orange;
+            }
+
+        .population-table {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;  /* hover केल्यावर pointer दिसेल */
+        }
+
+        /* hover झाल्यावर bubble effect */
+        .population-table:hover {
+            transform: scale(1.1);  /* थोडा मोठा होईल */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* shadow वाढेल */
+        }
+
+        .pop-col {
+            flex: 1;
+        }
+
+            .pop-col:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .pop-col img {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 6px;
+            }
+
+        .pop-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .pop-value {
+            font-size: 20px; /* Increase size */
+            font-weight: bold; /* Make bold */
+            color: #000; /* Darker color for better contrast (optional) */
+            margin-top: 5px;
+        }
+        .goog-te-combo {
+      font-size: 16px !important;
+      font-weight: bold !important;
+      padding: 6px;
+    }
+
+    
+    </style>
+
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'mr', // or 'mr' if your original site is in Marathi
+      includedLanguages: 'en,hi,mr', // ✅ Add 'mr' for Marathi
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+</head>
+
+<body>
+
+      <div class="top-bar-first">
+    <div class="contact-info-one">
+      <span>📧 dhule.gp.songir@gmail.com &nbsp;&nbsp; | &nbsp;&nbsp; 📞 +91 74209888933</span>
+      
+      
+    </div>
+    <div class="login-translate">
+     <a href="admin-login.html" class="gp-login" target="_blank">🧑‍💼 ग्रामपंचायत लॉगिन</a>
+    <span class="separator">|</span>
+    <div id="google_translate_element"></div>
+    </div>
+  </div>
+
+    <header class="site-header" style="display: flex; align-items: center;justify-content: center;">
+      <div class="logo">
+         <img src="images/maharashtraLogo_1.png" style="height: 150px; width: 150px; margin-right: 25px;" alt="Maharashtra Shasan">
+      </div>
+      <div class="header">
+         <h1 data-aos="fade-down"><strong>ग्रामपंचायत सोनगीर</strong></h1>
+        <p data-aos="fade-up"><strong>तालुका- धुळे,  जिल्हा - धुळे</strong> </p>
+      </div>
+    </header>
+
+    <nav class="navbar mb-4">
+         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+
+        <ul id="main-nav">
+            <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
+            <li><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
+            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li><a href="services.html">🤝 सेवा</a></li>
+            <li><a href="schemes.html">📍 योजना</a></li>
+            <li><a href="gallery.html">🖼️ गॅलरी</a></li>
+            <li><a href="contact.html">📞 संपर्क</a></li>
+            <li class="active"><a href="#">📝 अर्ज</a></li>
+             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
+            
+        </ul>
+
+       
+    </nav>
+
+    <!-- <section class="welcome-section-about">
+        <div data-aos="fade-right" class="info-card">
+            <h2 class="section-title-about">ग्रामपंचायत खैरगव्हाण बद्दल माहिती</h2>
+            <p>
+                खैरगव्हाण हि जिल्हा धुळे पासून ७९.९ किमी अतरावर आहे ग्रामपंचायत खैरगव्हाण ची स्थापना 
+                १८/१२/१९९६ साली झाली. ग्रामपंचायत खैरगव्हाण सर्व सुविधांनी परिपूर्ण असे अद्यावत ग्रामपंचायत कार्यालय 
+                कार्यान्वित असून संपूर्ण कामकाज संगणकीय पद्धतीचे आहे.
+            </p>
+
+            
+                
+           
+        </div>       
+    </section> -->
+
+      <section id="application">
+            <div class="container-fluid">
+               <div class="section-title-schemes"><h2 data-i18n="schemesTitle">अर्ज</h2></div>
+      
+                <!-- <h2 class="text-center mb-4">अर्ज</h2> -->
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>जन्म नोंदणी दाखला</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे जन्म नोंदणी दाखल्यासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#birthCertificateModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>विवाह नोंदणी दाखला</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे विवाह नोंदणी दाखल्यासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#marriageModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>रहिवासी दाखला</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे रहिवासी दाखल्यासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#rahiwasiModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>मृत्यू नोंद दाखला</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे मृत्यू नोंद दाखल्यासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#deathCertificateModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>ना हरकत प्रमाणपत्र</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे ना हरकत प्रमाणपत्रासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#NOCModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>माहितीचा अधिकार नमूना अर्ज</strong></span> </h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे माहितीचा अधिकाराच्या अर्जासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#RTIModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>बांधकाम परवानगी अर्ज</strong></span></h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे बांधकाम परवानगी अर्जासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#constructionModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="spotlight"><strong>नमूना नं ८ मागणी अर्ज</strong></span> </h5>
+                                <p class="card-text mt-3">आपल्या डिजिटल ग्रामपंचायतीकडे नमूना नं ८ मागणी अर्जासाठी थेट वेबसाइटद्वारे ऑनलाईन अर्ज करा.</p>
+                                <a href="#" class="btn btn-primary mt-4" data-bs-toggle="modal"
+                                    data-bs-target="#namunaModal">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    
+    
+    
+      
+    <div class="modal fade" id="complaintModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">तक्रार / सूचना</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form id="complaintForm">
+            <div class="mb-3">
+              <label class="form-label" >नाव :</label>
+              <input type="text" class="form-control" id="complainterName" placeholder="आपले पूर्ण नाव भरा" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">मोबाईल नंबर :</label>
+              <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">तक्रार / सूचना निवडा :</label>
+              <select class="form-control" id="reasonDropdown">
+                <option value="" required>-- निवडा --</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">वर्णन :</label>
+              <textarea class="form-control" id="comlaintDesc" rows="3" placeholder="समस्या तपशीलवार लिहा" required></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" form="complaintForm">Send</button>
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+      
+
+        <div class="modal" id="birthCertificateModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="birthLabel" class="modal-title">जन्म प्रमाणपत्र अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                     <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="birthForm">
+                           <div class="row">
+                                <div class="col-md-12 mb-4">
+                                     <label for="birthApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="birthApplicant">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="birthNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="birthNumber" placeholder = "अर्जदाराचा मोबाइल नंबर">
+                                 </div> 
+                                 <div class="col-md-12 mb-4">
+                                    <label for="birthEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="birthEmail" placeholder=" अर्जदाराचा ईमेल">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="birthAddress" class="form-label">पत्ता</label>
+                                    <input type="text" class="form-control" id="birthAddress" placeholder = "पत्ता">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="birthDate" class="form-label">जन्म दिनांक</label>
+                                    <input type="date" class="form-control" id="birthDate">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-5"><strong>लिंग</strong></legend>
+                                        <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input mt-3" type="radio" name="birthGridRadios" id="birthGenderRadiosFemale" value="Female" checked>
+                                            <label class="form-check-label mt-3" for="birthGenderRadiosFemale">
+                                            स्त्री 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input mt-3" type="radio" name="birthGridRadios" id="birthGenderRadiosMale" value="Male">
+                                            <label class="form-check-label mt-3" for="birthGenderRadiosMale">
+                                            पुरुष
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                 </div>
+                                  <div class="col-md-12 mb-4">
+                                        <label for="birthChildName" class="form-label">बाळाचे नाव</label>
+                                        <input type="text" class="form-control" id="birthChildName" placeholder = "बाळाचे नाव">
+                                  </div>  
+
+                                   <div class="col-md-12 mb-4">
+                                        <label for="ChildBirthProof" class="form-label">बाळाचा जन्माचा पुरावा</label>                                        
+                                        <input type="file" class="form-control" id="ChildBirthProof">                                      
+                                   </div>
+
+                                   <div class="col-md-12 mb-4">
+                                        <label for="birthMotherName" class="form-label">आईचे नाव</label>
+                                        <input type="text" class="form-control" id="birthMotherName" placeholder = "आईचे नाव">
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <label for="birthMotherAadhar" class="form-label">आईचा आधार कार्ड नंबर</label>
+                                        <input type="number" class="form-control" id="birthMotherAadhar" placeholder = "आईचा आधार कार्ड नंबर">
+                                    </div>                                    
+                                   <div class="col-md-12 mb-4">
+                                        <label for="birthMotherAadharFile" class="form-label">आईचे आधार कार्ड</label> 
+                                        <input type="file" class="form-control" id="birthMotherAadharFile">
+                                   </div>
+                                     <div class="col-md-12 mb-4">
+                                        <label for="birthFatherName" class="form-label">वडिलांचे नाव</label>
+                                        <input type="text" class="form-control" id="birthFatherName" placeholder = "वडिलांचे नाव">
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <label for="birthFatherAadhar" class="form-label">वडिलांचा आधार कार्ड नंबर</label>
+                                        <input type="number" class="form-control" id="birthFatherAadhar" placeholder = "वडिलांचा आधार कार्ड नंबर">
+                                    </div>                                    
+                                   <div class="col-md-12 mb-4">
+                                        <label for="birthFatherAadharFile" class="form-label">वडिलांचे आधार कार्ड</label> 
+                                        <input type="file" class="form-control" id="birthFatherAadharFile">
+                                   </div>  
+                                    <div class="col-md-12 mb-4">
+                                        <label for="birthplace" class="form-label">जन्म ठिकाण</label>
+                                        <input type="text" class="form-control" id="birthplace" placeholder = "जन्म ठिकाण">
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <label for="birthPlaceParentsAddress" class="form-label">आई वडिलांचा बाळाच्या जन्माच्या वेळचा पत्ता</label>
+                                        <input type="text" class="form-control" id="birthPlaceParentsAddress" placeholder = "आई वडिलांचा बाळाच्या जन्माच्या वेळचा पत्ता">
+                                    </div>
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="BirthUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="BirthtransactionId" name="BirthtransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+
+                           </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel" onclick="submitApplication('birthForm','Birth Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    </form>
+                    
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+
+
+        
+
+
+        <div class="modal" id="marriageModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="marriageLabel" class="modal-title">विवाह नोंदणी अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="marriageForm">
+                           <div class="row">
+                                 <div class="col-md-12 mb-4">
+                                    <label for="marriageApplicant" class="form-label">अर्जदाराचे पूर्ण नाव :</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे पूर्ण नाव" id="marriageApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="marriageNumber" class="form-label">मोबाइल क्रमांक :</label>
+                                    <input type="number" class="form-control" id="marriageNumber" placeholder = "मोबाइल क्रमांक">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="marriageEmail" class="form-label">ईमेल :</label>
+                                    <input type="email" class="form-control" id="marriageEmail" placeholder="ईमेल">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                <label for="marriageAddress" class="form-label">पत्ता :</label>
+                                <input type="text" class="form-control" id="marriageAddress" placeholder = "पत्ता">
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label for="marriagePatiNav" class="form-label">पतीचे पूर्ण नाव : </label>
+                                <input type="text" class="form-control" id="marriagePatiNav" placeholder="पतीचे पूर्ण नाव">
+                            </div>                                   
+                            <div class="col-md-12 mb-4">
+                                <label for="HusbandAadharFile" class="form-label">पतीचे आधार कार्ड</label> 
+                                <input type="file" class="form-control" id="HusbandAadharFile">
+                            </div>                                   
+                            <div class="col-md-12 mb-4">
+                                <label for="HusbandPhotoFile" class="form-label">पतीचा फोटो </label> 
+                                <input type="file" class="form-control" id="HusbandPhotoFile">
+                            </div>  
+                            <div class="col-md-12 mb-4">
+                                <label for="marriagePatniNav" class="form-label">पत्नीचे पूर्ण नाव(माहेर कडील):</label>
+                                <input type="text" class="form-control" id="marriagePatniNav" placeholder = "पत्नीचे पूर्ण नाव(माहेर कडील)">
+                            </div>                                 
+                            <div class="col-md-12 mb-4">
+                                <label for="WifeAadharFile" class="form-label">पत्नीचे आधार कार्ड</label> 
+                                <input type="file" class="form-control" id="WifeAadharFile">
+                            </div>                                   
+                            <div class="col-md-12 mb-4">
+                                <label for="WifePhotoFile" class="form-label">पत्नीचा फोटो </label> 
+                                <input type="file" class="form-control" id="WifePhotoFile">
+                            </div>  
+                            <div class="col-md-12 mb-4">
+                                <label for="marriageDate" class="form-label">विवाह दिनांक:</label>
+                                <input type="date" class="form-control" id="marriageDate">
+                            </div>
+                             <div class="col-md-12 mb-4">
+                                <label for="marriageYear" class="form-label">ग्रामपंचयातला विवाह नोंद केलेले वर्ष:</label>
+                                <input type="text" class="form-control" id="marriageYear" placeholder = "ग्रामपंचयातला विवाह नोंद केलेले वर्ष">
+                            </div>
+
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="MarriageUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="MarriagetransactionId" name="MarriagetransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+                            
+                           </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel"  onclick="submitApplication('marriageForm','Marriage Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--         
+        <div class="modal" id="rahiwasiModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="rahiwasiLabel" class="modal-title">रहिवासी दाखला</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="rahiwasiForm">
+                           <div class="row">
+
+                                <div class="col-md-12 mb-4">
+                                    <label for="rahiwasiApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="rahiwasiApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="rahiwasiNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="rahiwasiNumber" placeholder = "मोबाइल नंबर">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="rahiwasiEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="rahiwasiEmail" placeholder="ईमेल">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="rahiwasiAddress" class="form-label">पत्ता :</label>
+                                    <input type="text" class="form-control" id="rahiwasiAddress" placeholder = "पत्ता">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="rahiwasiAadhar" class="form-label">अर्जदाराचा आधार क्रमांक</label>
+                                    <input type="number" class="form-control" id="rahiwasiAadhar" placeholder = "अर्जदाराचा आधार क्रमांक  ">
+                                </div> 
+                           </div>
+                    </div>
+                    <div class="modal-footer">
+                        // <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button>
+                        <button class="btn btn-primary" data-i18n="submitLabel"  onclick="submitApplication('rahiwasiForm','RahiWasi Dakhla')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+        
+        <div class="modal" id="deathCertificateModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="deathCertLabel" class="modal-title">मृत्यू प्रमाणपत्र अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="deathCertificateForm">
+                           <div class="row">
+
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="deathCertApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="deathCertNumber" placeholder = "अर्जदाराचा मोबाइल नंबर">
+                                </div> 
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="deathCertEmail" placeholder=" अर्जदाराचा ईमेल">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="deathCertAddress" class="form-label">पत्ता</label>
+                                    <input type="text" class="form-control" id="deathCertAddress" placeholder = "पत्ता">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertDate" class="form-label">मृत्यू दिनांक</label>
+                                    <input type="date" class="form-control" id="deathCertDate">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">लिंग</legend>
+                                        <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="deathGridRadios" id="genderRadiosDeathCertFemale" value="Female" checked>
+                                            <label class="form-check-label" for="genderRadiosDeathCertFemale">
+                                            स्त्री
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="deathGridRadios" id="genderRadiosDeathCertMale" value="Male">
+                                            <label class="form-check-label" for="genderRadiosDeathCertMale">
+                                            पुरुष
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="deceasedName" class="form-label">मृताचे पूर्ण नाव</label>
+                                    <input type="text" class="form-control" id="deceasedName" placeholder = "मृताचे पूर्ण नाव">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="deceasedAadharNumber" class="form-label">मृताचा आधारकार्ड नंबर</label>
+                                    <input type="number" class="form-control" id="deceasedAadharNumber" placeholder = "मृताचा आधारकार्ड नंबर">
+                                </div>                                                                 
+                                <div class="col-md-12 mb-4">
+                                    <label for="DeceasedAadharFile" class="form-label">मृताचे आधारकार्ड </label> 
+                                    <input type="file" class="form-control" id="DeceasedAadharFile">
+                                </div>  
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertFatherHusbandName" class="form-label">मृताच्या पतीचे/वडिलांचे नाव</label>
+                                    <input type="text" class="form-control" id="deathCertFatherHusbandName" placeholder = "मृताच्या पतीचे/वडिलांचे नाव">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="deceasedMotherName" class="form-label">मृताच्या आईचे नाव</label>
+                                    <input type="text" class="form-control" id="deceasedMotherName" placeholder = "मृताच्या आईचे नाव">
+                                </div>               
+                                <div class="col-md-12 mb-4">
+                                    <label for="deathCertplace" class="form-label">मृत्यूचे ठिकाण</label>
+                                    <input type="text" class="form-control" id="deathCertplace" placeholder = "मृत्यूचे ठिकाण">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="deceasedAadharAddress" class="form-label">मयत व्यक्तीचा कायमचा पत्ता (आधारकार्डानुसार)</label>
+                                    <input type="text" class="form-control" id="deceasedAadharAddress" placeholder = "मयत व्यक्तीचा कायमचा पत्ता (आधारकार्डानुसार)">
+                                </div>
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="DeathUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="DeathtransactionId" name="DeathtransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+
+                           </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel"  onclick="submitApplication('deathCertificateForm','Death Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal" id="NOCModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="occupationLabel" class="modal-title">ना हरकत प्रमाणपत्र अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="NOCForm">
+                            <div class="row">
+
+                                <div class="col-md-12 mb-4">
+                                    <label for="NOCApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="NOCApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="NOCMobileNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="NOCMobileNumber" placeholder = "मोबाइल नंबर">
+                                </div>                
+                               <div class="col-md-12 mb-4">
+                                    <label for="NOCEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="NOCEmail" placeholder="अर्जदाराचा ईमेल">
+                                </div>
+                              <div class="col-md-12 mb-4">
+                                    <label for="NOCAddress" class="form-label">पत्ता :</label>
+                                    <input type="text" class="form-control" id="NOCAddress" placeholder = "पत्ता">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="NOCMilakatNumber" class="form-label">व्यवसाय ज्या मिळकतीत करावयाचा आहे तीचा क्रमांक</label>
+                                    <input type="text" class="form-control" id="NOCMilakatNumber" placeholder = "व्यवसाय ज्या मिळकतीत करावयाचा आहे तीचा क्रमांक">
+                                </div>                                
+                                 <div class="col-md-12 mb-4">
+                                    <label for="MilakatHakkachaPurava" class="form-label">मिळकत हक्काचा पुरावा किंवा भाडेकरार </label>
+                                    <input type="file" class="form-control" id="MilakatHakkachaPurava" placeholder = "मिळकत हक्काचा पुरावा किंवा भाडेकरार" >
+                                </div>                                                                
+                                 <div class="col-md-12 mb-4">
+                                    <label for="otherDocument" class="form-label">इतर कागदपत्र </label>
+                                    <input type="file" class="form-control" id="otherDocument" placeholder = "इतर कागदपत्र" >
+                                </div>           
+                                  <div class="col-md-12 mb-4">
+                                    <label for="NOCDescription" class="form-label">कोणता व्यवसाय करायचं आहे याचे थोडक्यात वर्णन</label>
+                                    <textarea class="form-control" id="NOCDescription"></textarea>
+                                </div> 
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="NOCUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="NOCtransactionId" name="NOCtransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+
+                            </div>
+                           
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel"  onclick="submitApplication('NOCForm','NOC(Occupation) Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal" id="RTIModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="RTILabel" class="modal-title">माहितीचा अधिकार अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="RTIForm">
+                           <div class="row">
+
+                                 <div class="col-md-12 mb-4">
+                                    <label for="RTIApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="RTIApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="RTINumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="RTINumber" placeholder = "मोबाइल नंबर">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="RTIEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="RTIEmail" placeholder="ईमेल">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="RTIAddress" class="form-label">पत्ता :</label>
+                                    <input type="text" class="form-control" id="RTIAddress" placeholder = "पत्ता">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="RTITitleDescription" class="form-label">हव्या असलेल्या माहितीचा तपशील</label>
+                                    <input type="text" class="form-control" id="RTITitleDescription" placeholder = "हव्या असलेल्या माहितीचा तपशील">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="RTITimePeriod" class="form-label">कोणत्या कालावधीची माहिती हवी?</label>
+                                    <input type="date" class="form-control" id="RTITimePeriod">
+                                </div> 
+                                <div class="col-md-12 mb-4">
+                                    <label for="RTIBPLNumber " class="form-label">अर्जदार दारीद्रय रेषेखालील आहे की नाही? असल्यास यादी क्रमांक</label>
+                                    <input type="text" class="form-control" id="RTIBPLNumber" placeholder = "यादी क्रमांक">
+                                </div>  
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="RTIUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="RTItransactionId" name="RTItransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+
+                           </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel" onclick="submitApplication('RTIForm','RTI Application')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal" id="constructionModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="constructionLabel" class="modal-title">बांधकाम मंजुरी अर्ज <button type="button" class="btn-close float-end" style="background-color: rgb(247, 1, 1);" data-bs-dismiss="modal"></button></h5>
+                        <!-- <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button> -->
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="constructionForm">
+                           <div class="row">
+
+                                 <div class="col-md-12 mb-4">
+                                    <label for="constructionApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="constructionApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="constructionNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="constructionNumber" placeholder = "मोबाइल नंबर">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="constructionEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="constructionEmail" placeholder="ईमेल">
+                                </div>
+                                  <div class="col-md-12 mb-4">
+                                    <label for="constructionAddress" class="form-label">पत्ता</label>
+                                    <input type="text" class="form-control" id="constructionAddress" placeholder = "पत्ता">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="constructionMilakatNumber" class="form-label">ज्या मिळकतीत बांधकाम करावयाचे आहे त्या मिळकतीचा क्रमांक</label>
+                                    <input type="text" class="form-control" id="constructionMilakatNumber" placeholder = "ज्या मिळकतीत बांधकाम करावयाचे आहे त्या मिळकतीचा क्रमांक">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="constructionMilakatArea " class="form-label">मिळकतीचे एकूण क्षेत्रफळ(चौ.मी.)</label>
+                                    <input type="text" class="form-control" id="constructionMilakatArea" placeholder = "मिळकतीचे एकूण क्षेत्रफळ(चौ.मी.)">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="constructionArea" class="form-label">बांधकाम करावयाचे एकूण क्षेत्रफळ(चौ.मी.)</label>
+                                    <input type="text" class="form-control" id="constructionArea" placeholder = "बांधकाम करावयाचे एकूण क्षेत्रफळ(चौ.मी.)">
+                                </div>       
+                                                                                          
+                                 <div class="col-md-12 mb-4">
+                                    <label for="ArchitectVihitNamunaDakhla" class="form-label">आर्किटेक्टच्या विहित नमुण्यातील दाखला</label>
+                                    <input type="file" class="form-control" id="ArchitectVihitNamunaDakhla" placeholder = "आर्किटेक्टच्या विहित नमुण्यातील दाखला" >
+                                </div>      
+                                                                                          
+                                 <div class="col-md-12 mb-4">
+                                    <label for="ArchitectDevelopmentPlan" class="form-label">आर्किटेक्ट यांनी दिलेला बांधकाम नकाशा </label>
+                                    <input type="file" class="form-control" id="ArchitectDevelopmentPlan" placeholder = "आर्किटेक्ट यांनी दिलेला बांधकाम नकाशा" >
+                                </div>     
+                                                                                          
+                                 <div class="col-md-12 mb-4">
+                                    <label for="ConstructionOherDocument" class="form-label">इतर आवश्यक कागदपत्रे व विहित नमुन्यातील अर्ज</label>
+                                    <input type="file" class="form-control" id="ConstructionOherDocument" placeholder = "इतर आवश्यक कागदपत्रे व विहित नमुन्यातील अर्ज" >
+                                </div>                                 
+                                <div class="col-md-12 mb-4">
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">मिळकत गट निवडा</legend>
+                                        <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="constructionGridRadios" id="ConstructRadiosGavthan" value="Gavthan" checked>
+                                            <label class="form-check-label" for="ConstructRadiosGavthan">
+                                            गावठाण    
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="constructionGridRadios" id="ConstructRadiosshetiGat" value="shetiGat">
+                                            <label class="form-check-label" for="ConstructRadiosshetiGat">
+                                            शेती गट   
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="constructionGridRadios" id="ConstructRadiosBinShetiGat" value="BinShetiGat">
+                                            <label class="form-check-label" for="ConstructRadiosBinShetiGat">
+                                            बिन शेती गट    
+                                            </label>
+                                        </div>
+                                    </fieldset> 
+                                </div>
+                                
+
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="ConstructionUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="ConstructiontransactionId" name="ConstructiontransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>
+
+
+                           </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel" onclick="submitApplication('constructionForm','Construction Approval Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="modal" id="namunaModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 data-i18n="namunaLabel" class="modal-title">नमूना नं ८ मागणी अर्ज</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="mobile-scroll">
+                    <div class="modal-body">
+                        <form id="namunaForm">
+                            <div class="row">
+
+                                <div class="col-md-12 mb-4">
+                                    <label for="namunaApplicant" class="form-label">अर्जदाराचे नाव</label>
+                                    <input type="text" class="form-control" placeholder="अर्जदाराचे नाव" id="namunaApplicant">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="namunaNumber" class="form-label">मोबाइल नंबर</label>
+                                    <input type="number" class="form-control" id="namunaNumber" placeholder = "मोबाइल नंबर">
+                                </div>                
+                                <div class="col-md-12 mb-4">
+                                    <label for="namunaEmail" class="form-label">ईमेल</label>
+                                    <input type="email" class="form-control" id="namunaEmail" placeholder="ईमेल">
+                                </div>
+                                 <div class="col-md-12 mb-4">
+                                    <label for="namunaAddress" class="form-label">पत्ता</label>
+                                    <input type="text" class="form-control" id="namunaAddress" placeholder = "पत्ता">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="namunaMilakatNumber" class="form-label">ज्या मिळकतीचा नमूना नं 8 हवा आहे त्या मिळकतीचा क्रमांक</label>
+                                    <input type="text" class="form-control" id="namunaMilakatNumber" placeholder="ज्या मिळकतीचा नमूना नं 8 हवा आहे त्या मिळकतीचा क्रमांक">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <fieldset class="row mb-3" style="display: inline-flex; flex-direction: column;" >
+                                        <legend class="col-form-label col-sm-12 pt-0">सदर मिळकतीचा कर भरणा केला आहे किंवा नाही</legend>
+                                        <div class="col-sm-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="namunaGridRadios" id="NamunaRadiosYes" value="Yes" checked>
+                                            <label class="form-check-label" for="NamunaRadiosYes">
+                                            होय 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="namunaGridRadios" id="NamunaRadiosNo" value="No">
+                                            <label class="form-check-label" for="NamunaRadiosNo">
+                                            नाही
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>                                                                              
+                                 <div class="col-md-12 mb-4">
+                                    <label for="KarBharnaPavti" class="form-label">कर भरणा केले बाबतची पावती </label>
+                                    <input type="file" class="form-control" id="KarBharnaPavti" placeholder = "कर भरणा केले बाबतची पावती" >
+                                </div>                          
+                                
+                                     <!-- Payment section: hidden until Next pressed -->
+                                    <div id="paymentSection" class="d-none">
+                                        <div class="mb-3">
+                                        <label class="form-label">UPI QR (for display only)</label>
+                                        <!-- you will place the QR image here later; we allow the admin to upload or client to view -->
+                                        <img id="NamunaUpiQrPreview" src="" alt="UPI QR" style="max-width:250px; display:block;">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label class="form-label">Transaction ID</label>
+                                        <input id="NamunatransactionId" name="NamunatransactionId" type="text" class="form-control" placeholder="Enter UPI transaction id">
+                                        </div>
+                                    </div>     
+
+                            </div>
+                           
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button class="btn btn-primary" data-i18n="submitLabel" type="submit" onclick="submitComplaint()">Submit</button> -->
+                        <button class="btn btn-primary" data-i18n="submitLabel" onclick="submitApplication('namunaForm','Namuna 8 Certificate')" type="button">Submit</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" type="button">Close</button>
+                    </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+  
+
+
+        <div id="logos"> 
+        <div data-aos="fade-up" class="govtlogos">
+          <img class="govlogo" src="images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="images/g20.png" alt="G 20">
+          <img class="govlogo" src="images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="images/panchayat.png" alt="Panchayat Raj">
+          <img class="govlogo" src="images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+      <!-- </section> -->
+
+    <section class="footer-info">
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li> <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank" rel="noopener noreferrer">थाशन निर्णय</a></li>
+        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
+        <li><a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a></li>
+        <li><a href="https://www.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">महा ऑनलाइन</a></li>
+        <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li><a href="https://ceoelection.maharashtra.gov.in/ceo/" target="_blank" rel="noopener noreferrer">मतदार यादीत नाव शोधण्यासाठी</a></li>
+        <li><a href="https://mahadbtmahait.gov.in/Farmer/AgriLogin/AgriLogin" target="_blank" rel="noopener noreferrer">कृषी विभाग महाडीबीटी</a></li>
+        <li><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">7/12 उतारा</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>सोशल मीडिया</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h3>पत्ता</h3>
+      <p>मु. पो. सोनगीर, तालुका: धुळे, जिल्हा: धुळे <br>पिन : 422000</p>
+       <a href="https://www.google.com/maps/dir//Songir,+Maharashtra+424309/@21.0800951,74.7836566,16z/data=!4m17!1m8!3m7!1s0x3bded75a721034a1:0xf4d25a7d818a6ace!2sSongir,+Maharashtra+424309!3b1!8m2!3d21.0815474!4d74.7892951!16s%2Fm%2F02vzx9n!4m7!1m0!1m5!1m1!1s0x3bded75a721034a1:0xf4d25a7d818a6ace!2m2!1d74.7892951!2d21.0815474?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D" target="_blank"><p><strong>GET DIRECTIONS</strong></p></a>
+     
+      <p>मोबाईल : +91 74209888933</p>
+      <p><strong>029383</strong></p>
+    </div>
+
+  </div>
+</section>
+
+
+
+     <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+      AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('nav ul#main-nav');
+  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+
+  // Guard: if elements are missing (e.g. different page), exit gracefully
+  if (!toggle || !menu) return;
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('show');       // add/remove .show
+    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+    // Optional: change icon from ☰ to ✖
+    toggle.textContent = isOpen ? '✖' : '☰';
+  });
+
+  // Close menu when any link clicked (for SPA behaviour or anchor links)
+  if (menuLinks.length) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+
+
+
+
+  // Optional: close menu if user taps/clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('show')) return;
+    if (!e.target.closest('nav')) {
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Optional: allow keyboard toggle via Enter/Space when focused
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+});
+
+
+
+
+
+
+  // Start: Submitting the applications to the backend.
+
+        async function submitApplication(formId, formType) {
+    try {
+        const formData = collectFormData(formId);
+        formData.Type = formType;
+        formData.SubmittedDate = getLocalISOString(); // better for API (UTC)
+
+        // console.log("Submitting data:", JSON.stringify(formData, null, 2));
+
+        const apiPath = window.APP_CONFIG.apiBaseUrl;
+        const response = await fetch(`${apiPath}Application/submit`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert(result.message || `${formType} form submitted successfully!`);
+            document.getElementById(formId).reset();
+        } else {
+            const err = await response.text();
+            console.error("Server Error:", err);
+            alert("Submission failed. Check console for details.");
+        }
+    } catch (error) {
+        console.error("Client Error:", error);
+    }
+}
+
+
+
+
+
+        function collectFormData(formId) {
+        const form = document.getElementById(formId);
+        const inputs = form.querySelectorAll("input, select, textarea");
+ 
+        const formData = {};
+
+
+        // Map your frontend IDs to backend property names
+        const mapping = {
+            //Similar Fields
+            birthApplicant: "ApplicantName",
+            marriageApplicant: "ApplicantName",
+            rahiwasiApplicant: "ApplicantName",
+            deathCertApplicant: "ApplicantName",
+            NOCApplicant: "ApplicantName",
+            RTIApplicant: "ApplicantName",
+            constructionApplicant: "ApplicantName",
+            namunaApplicant: "ApplicantName",
+            birthNumber: "Mobile",
+            marriageNumber: "Mobile",
+            rahiwasiNumber: "Mobile",
+            deathCertNumber: "Mobile",
+            NOCNumber: "Mobile",
+            RTINumber: "Mobile",
+            constructionNumber: "Mobile",
+            namunaNumber: "Mobile",
+            birthEmail: "Email",
+            rahiwasiEmail: "Email",
+            deathCertEmail: "Email",
+            marriageEmail: "Email",
+            NOCEmail: "Email",
+            RTIEmail: "Email",
+            constructionEmail: "Email",
+            namunaEmail: "Email",
+            birthAddress: "Address",
+            marriageAddress: "Address",
+            rahiwasiAddress: "Address",
+            deathCertAddress: "Address",
+            NOCAddress: "Address",
+            RTIAddress: "Address",
+            constructionAddress: "Address",
+            namunaAddress: "Address",
+            birthSubject: "Subject",
+            marriageSubject: "Subject",
+            rahiwasiSubject: "Subject",
+            deathCertSubject: "Subject",
+            NOCSubject: "Subject",
+            RTISubject: "Subject",
+            constructionSubject: "Subject",
+            namunaSubject: "Subject",
+
+
+            //common radios <- not in all forms
+            birthGenderRadiosMale: "gender",
+            birthGenderRadiosFemale: "gender",
+            genderRadiosDeathCertFemale:"gender",
+            genderRadiosDeathCertMale:"gender",
+            ConstructRadiosGavthan : "MilakatGat",
+            ConstructRadiosshetiGat : "MilakatGat",
+            ConstructRadiosBinshetiGat : "MilakatGat",
+            NamunaRadiosNo : "MilakatBharna",
+            NamunaRadiosYes : "MilakatBharna",
+
+            //Birth Certificate Fields
+            birthChildName: "childName",
+            birthDate: "birthDate",
+            birthplace: "birthPlace",
+            birthPlaceParentsAddress: "parentsBirthTimeAddress",
+            birthFatherName: "FatherName",
+            birthMotherName: "MotherName",
+            birthFatherAadhar: "FatherAadhar",
+            birthMotherAadhar: "MotherAadhar",
+
+            //Death Certificate Fields
+            deathCertDate:"DeathDate",
+            deceasedName:"DeceasedName",
+            deathCertplace:"DeathPlace",
+            deceasedAadharAddress:"DeceasedPermenantAddress",
+            deceasedMotherName:"MotherName",
+            deceasedFatherName:"FatherName",
+            deceasedAadharNumber:"Aadhar",
+
+            //Marriage Certificate Fields
+            
+            marriagePatiNav: "HusbandName",
+            marriagePatniNav: "WifeName",
+            marriageDate: "MarriageDate",
+            marriageYear: "MarriageYear",
+
+            //Rahiwasi Cetificate Fields
+            rahiwasiAadhar:"Aadhar",
+
+            //NOC Certificate Fields
+            NOCMilakatNumber:"MilakatNumber",
+            NOCDescription:"NOCDescription",
+
+            //RTI Application Fields
+            RTITitleDescription:"RTITitleDescription",
+            RTITimePeriod:"RTITimePeriod",
+            RTIBPLNumber:"RTIBPLNumber",
+
+            //construction NOC Fields
+            constructionMilakatNumber:"MilakatNumber",
+            constructionMilakatArea:"MilakatArea",
+            constructionArea:"ConstructionArea",
+            // constructionAddress: "ConstructionAddress",
+
+            //Namuna8 Certificate Fields
+            namunaMilakatNumber:"MilakatNumber",
+            
+
+        };
+
+        
+    inputs.forEach(input => {
+        const id = input.id?.trim();
+        if (!id) return;
+
+        const key = mapping[id];
+        if (!key) return;
+
+        if (input.type === "radio") {
+            if (input.checked) {
+                formData[key] = input.value;
+            }
+        } else if (input.type === "date" && input.value) {
+            // Convert date to yyyy-mm-dd for backend compatibility
+            formData[key] = input.value;
+        } else if (input.value) {
+            formData[key] = input.value.trim();
+        }
+    });
+
+    return formData;
+}
+
+
+
+    
+function getLocalISOString() {
+  const now = new Date();
+  const tzOffset = -now.getTimezoneOffset();
+  const diff = tzOffset >= 0 ? '+' : '-';
+  const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+  return (
+    now.getFullYear() +
+    '-' + pad(now.getMonth() + 1) +
+    '-' + pad(now.getDate()) +
+    'T' + pad(now.getHours()) +
+    ':' + pad(now.getMinutes()) +
+    ':' + pad(now.getSeconds()) +
+    diff + pad(tzOffset / 60) + ':' + pad(tzOffset % 60)
+  );
+}
+
+
+  // End: Submitting the applications to the backend.
+
+
+
+</script>
+
+   
+</body>
+</html>

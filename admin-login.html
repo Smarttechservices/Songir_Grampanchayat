@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="images/GramLogo.png" type="image/x-icon">
+    <title>ॲडमिन लॉगिन</title>
+   
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+     <meta name="google" content="notranslate">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            justify-content: center;
+            /* padding: 30px; */
+        }
+
+  
+
+    .gp-login-box {
+        background: #fff;
+        /* margin: 0 25px; */
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        width: 100%;
+        max-width: 600px;
+        margin: 90px auto; /* centers horizontally */
+    }
+
+    .gp-login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .gp-login-box label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .gp-login-box input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .gp-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .gp-btn {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .gp-btn:hover {
+      background: #218838;
+    }
+
+        .population-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+            .population-card h2 {
+                font-size: 18px;
+                color: #003366;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px solid orange;
+            }
+
+        .population-table {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;  /* hover केल्यावर pointer दिसेल */
+        }
+
+        /* hover झाल्यावर bubble effect */
+        .population-table:hover {
+            transform: scale(1.1);  /* थोडा मोठा होईल */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* shadow वाढेल */
+        }
+
+        .pop-col {
+            flex: 1;
+        }
+
+            .pop-col:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .pop-col img {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 6px;
+            }
+
+        .pop-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .pop-value {
+            font-size: 20px; /* Increase size */
+            font-weight: bold; /* Make bold */
+            color: #000; /* Darker color for better contrast (optional) */
+            margin-top: 5px;
+        }
+        .goog-te-combo {
+      font-size: 16px !important;
+      font-weight: bold !important;
+      padding: 6px;
+    }
+
+
+
+    
+
+/* ------------------------------Start - Admin Login Loader---------------------------------------------------- */
+
+
+
+
+/* OVERLAYS (Loader + Error) */
+.overlay {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  z-index: 5;
+  border-radius: 8px;
+}
+
+/* Loader text */
+.overlay p {
+  margin-top: 10px;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Error style */
+.overlay.error {
+  color: red;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+
+
+/*Till Login Loader  */
+
+
+.lds-roller {
+  /* change color here */
+  color: #46dff0
+}
+.lds-roller,
+.lds-roller div,
+.lds-roller div:after {
+  box-sizing: border-box;
+}
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7.2px;
+  height: 7.2px;
+  border-radius: 50%;
+  background: #46dff0;
+  margin: -3.6px 0 0 -3.6px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 62.62742px;
+  left: 62.62742px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 67.71281px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 70.90963px;
+  left: 48.28221px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 70.90963px;
+  left: 31.71779px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 67.71281px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 62.62742px;
+  left: 17.37258px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12.28719px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 61, 61, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ------------------------------End - Admin Login Loader---------------------------------------------------- */
+
+
+
+
+
+
+    
+    </style>
+
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'mr', // or 'mr' if your original site is in Marathi
+      includedLanguages: 'en,hi,mr', // ✅ Add 'mr' for Marathi
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+</head>
+
+<body>
+
+   
+
+   <header class="site-header" style="display: flex; align-items: center;justify-content: center;">
+      <div class="logo">
+         <img src="images/maharashtraLogo_1.png" style="height: 150px; width: 150px; margin-right: 25px;" alt="Maharashtra Shasan">
+      </div>
+      <div class="header">
+         <h1 data-aos="fade-down"><strong>ग्रामपंचायत सोनगीर</strong></h1>
+        <p data-aos="fade-up"><strong>तालुका- धुळे,  जिल्हा - धुळे</strong> </p>
+      </div>
+    </header>
+
+   
+
+    <div class="gp-login-box">
+    <h2>ॲडमिन प्रवेश पोर्टल</h2>
+    <form id="adminLoginForm">
+      <label>यूजरनेम *</label>
+      <input type="text" id="username" placeholder="यूजरनेम टाका" required>
+
+      <label>पासवर्ड *</label>
+      <input type="password" id="password" placeholder="पासवर्ड टाका" required>
+      <span id="loginMessage" class="text-danger mt-2" style="display:block; font-size: 0.9rem;"></span>
+
+      
+
+      <button type="submit" class="gp-btn" id="loginbtn">साईन इन</button>
+    </form>
+  </div>
+
+      <div id="loaderOverlay" class="loader-overlay" style="display: none;">
+      <div class="lds-roller">
+        <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div>
+      </div>
+    </div>  
+
+
+
+     
+
+
+
+
+     <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+    
+    <script src="utils.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+    </script>
+
+     <script>
+
+
+     //--------------------------------------Api Implementation-----------------------------------
+const adminLoginForm = document.getElementById('adminLoginForm');
+const loaderOverlay = document.getElementById('loaderOverlay');
+const message = document.getElementById('loginMessage');
+const loginBtn = document.querySelector('#loginbtn');
+
+if (adminLoginForm) {
+  adminLoginForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    message.textContent = "";
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!username || !password) {
+      message.textContent = "Please enter both Username and Password.";
+      return;
+    }
+
+    // Show loader & disable form controls
+    if (loaderOverlay) loaderOverlay.style.display = "flex";
+    if (loginBtn) loginBtn.disabled = true;
+
+    try {
+      const apiPath = window.APP_CONFIG.apiBaseUrl;
+
+      const resp = await fetchWithTimeout(apiPath + 'admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      }, 60000); // 60s timeout for Render cold start
+
+      if (!resp.ok) {
+        const errorData = await resp.json().catch(() => ({}));
+        message.textContent = errorData.message || "Invalid credentials, login failed!";
+        return;
+      }
+
+      const data = await resp.json();
+      localStorage.setItem('adminToken', data.token); // Save JWT
+
+      // Redirect to dashboard (same tab)
+      window.location.href = "AdminDashboard.html";
+
+    } catch (error) {
+      if (error.message === 'timeout') {
+        message.textContent = "Server is starting up. Please wait a minute and try again.";
+      } else {
+        message.textContent = "Server not responding. Please try again later.";
+      }
+      console.error("Login error:", error);
+
+    } finally {
+      if (loaderOverlay) loaderOverlay.style.display = "none";
+      if (loginBtn) loginBtn.disabled = false;
+    }
+  });
+}
+
+
+    
+  // Admin Login Implementation
+  // const adminLoginForm = document.getElementById('adminLoginForm');
+  // const loaderOverlay = document.getElementById('loaderOverlay');
+  // const message = document.getElementById('loginMessage');
+  // const loginBtn = document.querySelector('#loginbtn');
+  // // const loginModalEl = document.getElementById('loginModal');
+
+  // // if (!loginModalEl) {
+  // //   console.warn("loginModal element not found");
+  // // }
+
+  // // 1) Submit/login handler (keeps your loader + fetch logic)
+  // if (adminLoginForm) {
+  //   adminLoginForm.addEventListener('submit', async function (e) {
+  //     e.preventDefault();
+  //     message.textContent = "";
+
+  //     const username = document.getElementById('username').value.trim();
+  //     const password = document.getElementById('password').value.trim();
+
+  //     if (!username || !password) {
+  //       message.textContent = "Please Enter Both || Username and Password.";
+  //       return;
+  //     }
+
+  //     // Show loader & disable form controls
+  //     if (loaderOverlay) loaderOverlay.style.display = "flex";
+  //     if (loginBtn) loginBtn.disabled = true;
+
+  //     try {
+  //       const apiPath = window.APP_CONFIG.apiBaseUrl;
+  //       const resp = await fetchWithTimeout(apiPath + 'admin/login', {
+  //         method: 'POST',
+  //         headers: { 'Content-Type': 'application/json' },
+  //         body: JSON.stringify({ username, password })}, 60000);
+  //       // });
+
+  //       if (!resp.ok) {
+  //         const errorData = await resp.json().catch(() => ({}));
+  //         message.textContent = errorData.message || "Invalid credentials, login failed!";
+  //         return;
+  //       }
+
+  //       const data = await resp.json();
+  //       localStorage.setItem('adminToken', data.token);
+
+  //       // success: open dashboard in new tab
+  //       window.location.assign("AdminDashboard.html");
+
+       
+  //     } catch (error) {
+  //       // message.textContent = "Server not responding. Please try again later.";
+  //       // console.error("Login error:", error);
+
+  //         if (error.message === 'timeout') {
+  //           message.textContent = "Server is starting up. Please wait a minute and try again.";
+  //         } else {
+  //           message.textContent = "Server not responding.Please try again later";
+  //         }
+  //         console.error("Login error:", error);
+
+  //     } 
+  //     finally {
+  //       // always clear loader / enable button (closing will also reset but keep this safe)
+  //       if (loaderOverlay) loaderOverlay.style.display = "none";
+  //       if (loginBtn) loginBtn.disabled = false;
+  //     }
+  //   });
+  // }
+
+
+  // 3) Optional nicety: clear message when user focuses any input (so error disappears as they edit)
+  const inputs = adminLoginForm ? adminLoginForm.querySelectorAll('input') : [];
+  inputs.forEach(inp => {
+    inp.addEventListener('focus', () => {
+      if (message) message.textContent = "";
+    });
+  });
+
+
+     </script>
+</body>
+</html>

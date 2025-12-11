@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="images/GramLogo.png" type="image/x-icon">
+    <title>ग्रामपंचायत सोनगीर</title>
+   
+  <!--Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+     <meta name="google" content="notranslate">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons (FontAwesome or similar) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            /* padding: 30px; */
+        }
+
+        .population-card {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+            .population-card h2 {
+                font-size: 18px;
+                color: #003366;
+                margin-bottom: 10px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 3px solid orange;
+            }
+
+        .population-table {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;  /* hover केल्यावर pointer दिसेल */
+        }
+
+        /* hover झाल्यावर bubble effect */
+        .population-table:hover {
+            transform: scale(1.1);  /* थोडा मोठा होईल */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* shadow वाढेल */
+        }
+
+        .pop-col {
+            flex: 1;
+        }
+
+            .pop-col:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .pop-col img {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 6px;
+            }
+
+        .pop-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .pop-value {
+            font-size: 20px; /* Increase size */
+            font-weight: bold; /* Make bold */
+            color: #000; /* Darker color for better contrast (optional) */
+            margin-top: 5px;
+        }
+        .goog-te-combo {
+      font-size: 16px !important;
+      font-weight: bold !important;
+      padding: 6px;
+    }
+
+    .section-container{
+    text-align:center;
+    padding:10px 0px;
+    margin: 0px 0px;
+    background:#fde9e2;   /* full width background color */
+    width:100%;
+    }
+
+    .sectionHead
+    {
+      margin-top: 18px;
+    }
+      .info-card-img {
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 1400px;
+      width: 100%;
+      text-align: center;
+
+      align-items: center;
+      justify-content: center;
+
+      background-position: center;
+    }
+
+    .center
+    {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin-bottom: 20px;
+    }
+
+    #songirFortModal .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* <-- images + cards center होतात */
+    }
+
+    #songirGrampanchayatModal .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* <-- images + cards center होतात */
+    }
+
+    #songirVillageModal .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* <-- images + cards center होतात */
+    }
+
+    #songirMosqueModal .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* <-- images + cards center होतात */
+    }
+
+    #songirYatraModal .modal-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* <-- images + cards center होतात */
+    }
+
+    .modal-content{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .modal-lg-custom {
+      max-width: 900px; /* adjust width here */
+      width: 90%; /* optional */
+    }
+
+    .modal-body .card img{
+      height: 18rem;
+      object-fit: cover;
+      /* width: 35rem; */
+    }
+
+    .modal-body .card {
+      width: 35rem;
+    }
+
+
+    @media (max-width: 576px) {
+  .modal-dialog {
+    max-width: 95% !important;
+    margin: auto;
+  }
+
+  .modal-content {
+    flex-wrap: nowrap;  /* prevent breaking */
+  }
+
+  .modal-body .card {
+    width: 100% !important;  /* full width on phone */
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+}
+    
+    </style>
+
+    <meta name="google" content="notranslate">
+    <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'mr', // or 'mr' if your original site is in Marathi
+      includedLanguages: 'en,hi,mr', // ✅ Add 'mr' for Marathi
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+</head>
+
+<body>
+
+      <div class="top-bar-first">
+    <div class="contact-info-one">
+      <span>📧 dhule.gp.songir@gmail.com &nbsp;&nbsp; | &nbsp;&nbsp; 📞 +91 74209888933</span>
+      
+      
+    </div>
+    <div class="login-translate">
+     <a href="admin-login.html" class="gp-login" target="_blank">🧑‍💼 ग्रामपंचायत लॉगिन</a>
+    <span class="separator">|</span>
+    <div id="google_translate_element"></div>
+    </div>
+  </div>
+
+    <!-- <header class="site-header">
+      <div class="logo">
+         <img src="images/maharashtraLogo_1.png" alt="Maharashtra Shasan">
+      </div>
+        <h1 data-aos="fade-down"><strong>ग्रामपंचायत सोनगीर</strong></h1>
+        <p data-aos="fade-up"><strong>तालुक- धुळे,  जिल्हा - धुळे</strong> </p>
+    </header> -->
+    <header class="site-header" style="display: flex; align-items: center;justify-content: center;">
+      <div class="logo">
+         <img src="images/maharashtraLogo_1.png" style="height: 150px; width: 150px; margin-right: 25px;" alt="Maharashtra Shasan">
+      </div>
+      <div class="header">
+         <h1 data-aos="fade-down"><strong>ग्रामपंचायत सोनगीर</strong></h1>
+        <p data-aos="fade-up"><strong>तालुका- धुळे,  जिल्हा - धुळे</strong> </p>
+      </div>
+
+    </header>
+
+    <nav class="navbar">
+         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+
+        <ul id="main-nav">
+            <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
+            <li class="active"><a href="#">ℹ️ आमच्याबद्दल</a></li>
+            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li><a href="services.html">🤝 सेवा</a></li>
+            <li><a href="schemes.html">📍 योजना</a></li>
+            <li><a href="gallery.html">🖼️ गॅलरी</a></li>
+            <li><a href="contact.html">📞 संपर्क</a></li>
+            <li><a href="apply.html">📝 अर्ज</a></li>
+             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
+            
+        </ul>
+
+       
+    </nav>
+
+    <section class="welcome-section-about">
+        <div data-aos="fade-right" class="info-card">
+            <h2 class="section-title-about">ग्रामपंचायत सोनगीर बद्दल माहिती</h2>
+            <p>
+                सोनगीर हि जिल्हा धुळे पासून ३० किमी अतरावर आहे ग्रामपंचायत सोनगीर ची स्थापना 
+                १८/१२/१९९६ साली झाली. ग्रामपंचायत सोनगीर सर्व सुविधांनी परिपूर्ण असे अद्यावत ग्रामपंचायत कार्यालय 
+                कार्यान्वित असून संपूर्ण कामकाज संगणकीय पद्धतीचे आहे.
+            </p>
+
+            
+                
+           
+        </div>
+
+        
+    </section>
+
+    <section >
+
+    <div class="section-container">
+          <h2 class="sectionHead" data-aos="fade-up"><strong>🏞️ गावातील प्रेक्षणीय स्थळे</strong></h2>
+        </div>
+        <div class="center">
+        <div class="info-card-img">
+          
+        <div class="songirwallpaper" >
+
+        </div>
+
+        <div class="container-fluid" style="display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap;margin: 10px 0px;">
+        <div class="card" style="width: 28rem; height: 600px;">
+          <img src="images/Places/songirfort_1.jpg" style="height:300px" class="card-img-top" alt="songir Fort">
+          <div class="card-body">
+            <h4 class="card-title"><strong>किल्ले सोनगीर</strong></h4>
+            <p class="card-text">सोनगीर किल्ला हा धुळे तालुक्यातील सोनगीर गावाच्या पश्चिमेकडील टेकडीवर वसलेला एक प्राचीन किल्ला आहे. हा किल्ला सुमारे 1000 फूट उंचीवर असून त्यावरून आसपासचा परिसर आणि गावाचे मनोहर दृश्य दिसते. किल्ल्याचे बांधकाम सातवाहन व यादवकालीन असल्याचे मानले जाते. प्राचीन पाण्याची टाकी, तटबंदीचे अवशेष आणि दगडी पायऱ्या आजही येथे पाहायला मिळतात. इतिहासप्रेमी, ट्रेकिंग आवडणाऱ्यांसाठी हे एक आकर्षक आणि सोपे ट्रेकिंग ठिकाण आहे.</p>
+            <a href="#" class="btn btn-primary mt-3"  data-bs-toggle="modal" data-bs-target="#songirFortModal">अधिक पहा</a>
+          </div>
+        </div>
+
+        
+        <div class="card" style="width: 28rem; height: 600px;">
+          <img src="images/Places/songirvillage.jpeg" style="height:300px" class="card-img-top" alt="Songir Mosque">
+          <div class="card-body">
+            <h4 class="card-title"><strong>सोनगीर गाव</strong></h4>
+            <p class="card-text">सोनगीर गाव धुळे तालुक्यातील एक सुंदर आणि ऐतिहासिक गाव असून येथे निसर्गरम्य वातावरण आणि शांत ग्रामीण जीवन अनुभवायला मिळते. येथे प्रसिद्ध सोनगीर किल्ला तसेच धार्मिक आणि सांस्कृतिक परंपरांचा समृद्ध वारसा जपला जातो.</p>
+            <a href="#" class="btn btn-primary mt-3"  data-bs-toggle="modal" data-bs-target="#songirVillageModal">अधिक पहा</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 28rem; height: 650px;">
+          <img src="images/Places/Songir_Grampanchayat.jpeg" style="height:300px" class="card-img-top" alt="Songir Grampanchayat">
+          <div class="card-body">
+            <h4 class="card-title"><strong>सोनगीर ग्रामपंचायत</strong></h4>
+            <p class="card-text">सोनगीर ग्रामपंचायत ही धुळे तालुक्यातील स्थानिक स्वराज्य संस्थेची एक महत्वाची प्रशासनिक यंत्रणा आहे. गावातील मूलभूत सुविधा जसे की रस्ते, पाणीपुरवठा, स्वच्छता, आरोग्य, शिक्षण तसेच ग्रामविकास कामांचे नियोजन आणि अंमलबजावणी ग्रामपंचायत करते. लोकप्रतिनिधींच्या सहभागातून गावाच्या सर्वांगीण विकासाला दिशा मिळते. गावातील लोकांच्या गरजा, सूचना आणि तक्रारी यांचा विचार करून ग्रामपंचायत गावाच्या प्रगतीसाठी सातत्याने कार्यरत असते.</p>
+            <a href="#" class="btn btn-primary mt-3"  data-bs-toggle="modal" data-bs-target="#songirGrampanchayatModal">अधिक पहा</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 28rem; height: 650px;">
+          <img src="images/Places/songir_ratha_main.jpeg" style="height:300px" class="card-img-top" alt="Songir Ratha Yatra">
+          <div class="card-body">
+            <h4 class="card-title"><strong>सोनगीर रथ यात्रा</strong></h4>
+            <p class="card-text">सोनगीर रथ यात्रा ही सोनगीर गावातील एक पारंपारिक आणि धार्मिक महत्त्वाची उत्सव परंपरा आहे. गावातील देवस्थानातून भव्य रथ उत्सव मोठ्या श्रद्धेने साजरा केला जातो. या दिवशी रथाला सुंदर सजावट केली जाते आणि गावकरी, भक्त आणि मान्यवरांच्या उपस्थितीत ढोल-ताशे, लेझीम आणि कीर्तन यांच्या उत्साही वातावरणात रथाची मिरवणूक गावामध्ये काढली जाते. या यात्रेमुळे गावात एकतेचे, भक्तीचे आणि सांस्कृतिक जिव्हाळ्याचे वातावरण निर्माण होते. ही यात्रा गावाच्या समृद्ध परंपरा आणि धार्मिक भावनांचे प्रतीक आहे.</p>
+            <a href="#" class="btn btn-primary mt-3"  data-bs-toggle="modal" data-bs-target="#songirYatraModal">अधिक पहा</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 28rem; height: 600px;">
+          <img src="images/Places/Songir_Place.jpeg" style="height:300px" class="card-img-top" alt="Songir Mosque">
+          <div class="card-body">
+            <h4 class="card-title"><strong>सोनगीर जामा मस्जिद</strong></h4>
+            <p class="card-text">सोनगीर जामा मस्जिद ही सोनगीर गावातील एक महत्त्वाची धार्मिक आणि ऐतिहासिक वास्तू आहे. ही मस्जिद गावातील मुस्लिम समाजासाठी प्रार्थना, शिक्षण आणि सामाजिक मिळण-एकत्र येण्याचे केंद्र म्हणून कार्य करते. मस्जिदची बांधणी साधी आणि शांततेचे प्रतीक दर्शवणारी आहे. येथे नमाज, धार्मिक कार्यक्रम, रमजान महिन्यातील विशेष प्रार्थना तसेच समाजातील भाईचारा आणि एकतेचा संदेश जपला जातो.</p>
+            <a href="#" class="btn btn-primary mt-3"  data-bs-toggle="modal" data-bs-target="#songirMosqueModal">अधिक पहा</a>
+          </div>
+        </div>
+        
+
+        </div>
+        </div>
+      </div>  
+
+    </section>
+    
+
+    
+    <div class="modal fade" id="songirFortModal" tabindex="-1">
+    <div class="modal-dialog modal-lg-custom">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">किल्ले सोनगीर</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <!-- <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+             <div class="card" style="width: 18rem;">
+              <img src="images/Places/songirfort.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            </div>
+          </div>
+            <div class="col-md-6">           
+           <div class="mb-3">
+              <div class="card" style="width: 18rem;">
+                <img src="images/Places/fortcanon.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+
+          </div> -->         
+
+           <div class="mb-3">
+             <div class="card">
+             <a href="images/Places/songirfort.jpg" data-lightbox="gallery" data-title="This is caption text">
+              <img src="images/Places/songirfort.jpg" class="card-img-top" alt="...">
+              </a>
+
+              <div class="card-body">
+                <p class="card-text">सोनगीर किल्ला हा डोंगरमाथ्यावर वसलेला एक प्राचीन दुर्ग असून त्याच्या उंचावरून दिसणारे विहंगम दृश्य मन मोहून टाकते. इतिहासाच्या खुणा जपणारा हा किल्ला आजही धुळे परिसरातील एक लोकप्रिय आणि आकर्षक पर्यटनस्थळ आहे.</p>
+              </div>
+            </div>
+            </div>
+
+             <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/fortcanon.jpeg" data-lightbox="gallery" data-title="This is caption text">
+                  <img src="images/Places/fortcanon.jpeg" class="card-img-top" alt="...">
+                </a>  
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ल्याच्या पायथ्याशी असलेली त्या काळातील तोफ, किल्ल्याला भेट देणाऱ्या प्रेक्षकांसाठी एक प्रेक्षणीय स्थळ आहे.</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/fortgate.jpeg" data-lightbox="gallery" data-title="सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.">
+                <img src="images/Places/fortgate.jpeg" class="card-img-top" alt="...">
+                 </a>  
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/fortgate_1.jpeg" data-lightbox="gallery" data-title="सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.">
+                <img src="images/Places/fortgate_1.jpeg" class="card-img-top" alt="...">
+               </a>  
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.</p>
+                </div>
+              </div>
+            </div>
+
+             <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/FortGate_2.jpeg" data-lightbox="gallery" data-title="सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.">
+                <img src="images/Places/FortGate_2.jpeg" class="card-img-top" alt="सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.">
+                </a>  
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ल्यामध्ये जाण्यासाठी केलेले गेट.</p>
+                </div>
+              </div>
+            </div>
+
+            
+             <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/FortSteps.jpeg" data-lightbox="gallery" data-title="सोनगीर किल्ल्यामध्ये जाण्यासाठी तयार केलेल्या दगडी पायऱ्या.">
+                <img src="images/Places/FortSteps.jpeg" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ला सर करण्यासाठी तयार केलेल्या दगडी पायऱ्या.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="card">
+               <a href="images/Places/fortmap.jpeg" data-lightbox="gallery" data-title="सोनगीर किल्ल्याचा नकाशा.">
+                <img src="images/Places/fortmap.jpeg" class="gallery card-img-top" alt="सोनगीर किल्ल्याचा नकाशा">
+                </a>
+                <div class="card-body">
+                  <p class="card-text">सोनगीर किल्ल्याचा नकाशा.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <!-- <button class="btn btn-primary" type="submit" form="complaintForm">Send</button> -->
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+  <div class="modal fade" id="songirVillageModal" tabindex="-1">
+    <div class="modal-dialog modal-lg-custom">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">सोनगीर गाव</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+                  
+           <div class="mb-3">
+             <div class="card">
+               <a href="images/Places/songirvillage.jpeg" data-lightbox="gallery" data-title="सोनगीर गाव.">
+              <img src="images/Places/songirvillage.jpeg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <p class="card-text">सोनगीर हे महाराष्ट्रातील धुळे जिल्ह्याजवळ वसलेले एक शांत आणि सांस्कृतिक वारशाने समृद्ध गाव आहे, ज्याच्या सभोवतालच्या हिरव्यागार डोंगररांगा आणि रम्य वातावरणामुळे ते निसर्गप्रेमींसाठी आकर्षण ठरते.</p>
+              </div>
+            </div>
+            </div>
+
+
+              </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <!-- <button class="btn btn-primary" type="submit" form="complaintForm">Send</button> -->
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+    
+    <div class="modal fade" id="songirGrampanchayatModal" tabindex="-1">
+    <div class="modal-dialog modal-lg-custom">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">सोनगीर ग्रामपंचायत</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+                  
+           <div class="mb-3">
+             <div class="card">
+               <a href="images/Places/Songir_Grampanchayat.jpeg" data-lightbox="gallery" data-title="सोनगीर ग्रामपंचायत.">
+                 <img src="images/Places/Songir_Grampanchayat.jpeg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <p class="card-text">सोनगीर ग्रामपंचायत ही गावाच्या सर्वांगीण विकासासाठी कार्यरत असलेली स्थानिक स्वराज्य संस्था आहे, जी पायाभूत सुविधा, स्वच्छता आणि नागरिकांच्या गरजांकडे सतत लक्ष देते. पारदर्शक प्रशासन आणि जनसहभाग यांच्या आधारावर ही ग्रामपंचायत गावाच्या प्रगतीला दिशा देत आहे.</p>
+              </div>
+            </div>
+            </div>
+
+
+              </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <!-- <button class="btn btn-primary" type="submit" form="complaintForm">Send</button> -->
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="songirYatraModal" tabindex="-1">
+    <div class="modal-dialog modal-lg-custom">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">सोनगीर रथ यात्रा</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+                  
+           <div class="mb-3">
+             <div class="card">
+               <a href="images/Places/Songir_Festival.jpeg" data-lightbox="gallery" data-title="सोनगीर रथ यात्रा.">
+                  <img src="images/Places/Songir_Festival.jpeg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <p class="card-text">सोनगीरची रथयात्रा हा गावात मोठ्या भक्तिभावाने साजरा होणारा पवित्र उत्सव असून यात देवाची भव्य मिरवणूक, पारंपरिक ढोल-ताशे आणि भक्तांचा उत्साह गावभर दुमदूमतो. श्रद्धा, संस्कृती आणि समुदायभावना यांना एकत्र आणणारी ही रथयात्रा सोनगीर गावाची धार्मिक ओळख उजळवते.</p>
+              </div>
+            </div>
+            </div>
+
+             <div class="mb-3">
+             <div class="card">
+               <a href="images/Places/songir_ratha.jpeg" data-lightbox="gallery" data-title="सोनगीर रथ यात्रेसाठी जमलेले भाविक.">
+                  <img src="images/Places/songir_ratha.jpeg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <p class="card-text">सोनगीर गावातील पवित्र रथयात्रा साजरी करण्यासाठी दूर-दूरवरून भक्त मोठ्या श्रद्धेने येथे येतात आणि उत्सवाचे दिव्य वातावरण अनुभवतात. भक्तिगीत, मिरवणुका आणि आध्यात्मिक आनंदाने भरलेला हा दिवस संपूर्ण गावाला भक्तिमय रंगात न्हाऊन काढतो.</p>
+              </div>
+            </div>
+            </div>
+
+
+              </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <!-- <button class="btn btn-primary" type="submit" form="complaintForm">Send</button> -->
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="songirMosqueModal" tabindex="-1">
+    <div class="modal-dialog modal-lg-custom">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">सोनगीर जामा मस्जिद</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+                  
+           <div class="mb-3">
+             <div class="card">
+               <a href="images/Places/Songir_Place.jpeg" data-lightbox="gallery" data-title="सोनगीर जामा मस्जिद.">
+                 <img src="images/Places/Songir_Place.jpeg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <p class="card-text">सोनगीर जामा मस्जिद ही गावातील एक शांत आणि ऐतिहासिक उपासनेची जागा असून तिची सुंदर रचना आणि साधेपणा मनाला शांतता देते. समुदायातील एकोप्याचे प्रतीक मानली जाणारी ही मस्जिद धार्मिक व सांस्कृतिक सौहार्द जपण्यात महत्त्वाची भूमिका निभावते.</p>
+              </div>
+            </div>
+            </div>
+
+
+              </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <!-- <button class="btn btn-primary" type="submit" form="complaintForm">Send</button> -->
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+    
+      
+    <div class="modal fade" id="complaintModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">तक्रार / सूचना</h5>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form id="complaintForm">
+            <div class="mb-3">
+              <label class="form-label" >नाव :</label>
+              <input type="text" class="form-control" id="complainterName" placeholder="आपले पूर्ण नाव भरा" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">मोबाईल नंबर :</label>
+              <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा" required>
+            </div>
+
+
+
+            <div class="mb-3">
+              <label class="form-label">तक्रार / सूचना निवडा :</label>
+              <select class="form-control" id="reasonDropdown">
+                <option value="" required>-- निवडा --</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">वर्णन :</label>
+              <textarea class="form-control" id="comlaintDesc" rows="3" placeholder="समस्या तपशीलवार लिहा" required></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" form="complaintForm">Send</button>
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+
+        <div id="logos"> 
+        <div data-aos="fade-up" class="govtlogos">
+          <img class="govlogo" src="images/apleSarkar.png" alt="Aple Sarkar">        
+          <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
+          <img class="govlogo" src="images/digitalIndia.png" alt="Digital India">
+          <img class="govlogo" src="images/g20.png" alt="G 20">
+          <img class="govlogo" src="images/gramVikas.png" alt="Gram Vikas">
+          <img class="govlogo" src="images/mahaShasan.png" alt="Maha shasan">
+          <img class="govlogo" src="images/panchayat.png" alt="Panchayat Raj">
+          <img class="govlogo" src="images/vasundhara.png" alt="Vasundhara">        
+          <img class="govlogo" src="images/panchayat.png" alt="Panchayat">
+          <img class="govlogo" src="images/satyamevaJayate.png" alt="Satyameva Jayate">
+          <img class="govlogo" src="images/jalayuktaShivar.png" alt="Jalyukta Shivar">
+        </div>
+      </div>
+      <!-- </section> -->
+
+    <section class="footer-info">
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li> <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank" rel="noopener noreferrer">थाशन निर्णय</a></li>
+        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
+        <li><a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a></li>
+        <li><a href="https://www.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">महा ऑनलाइन</a></li>
+        <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>महत्वाच्या लिंक</h3>
+      <ul>
+        <li><a href="https://ceoelection.maharashtra.gov.in/ceo/" target="_blank" rel="noopener noreferrer">मतदार यादीत नाव शोधण्यासाठी</a></li>
+        <li><a href="https://mahadbtmahait.gov.in/Farmer/AgriLogin/AgriLogin" target="_blank" rel="noopener noreferrer">कृषी विभाग महाडीबीटी</a></li>
+        <li><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">7/12 उतारा</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>सोशल मीडिया</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h3>पत्ता</h3>
+      <p>मु. पो. सोनगीर, तालुका: धुळे, जिल्हा: धुळे <br>पिन : 422003</p>
+      <a href="https://www.google.com/maps/dir//Songir,+Maharashtra+424309/@21.0800951,74.7836566,16z/data=!4m17!1m8!3m7!1s0x3bded75a721034a1:0xf4d25a7d818a6ace!2sSongir,+Maharashtra+424309!3b1!8m2!3d21.0815474!4d74.7892951!16s%2Fm%2F02vzx9n!4m7!1m0!1m5!1m1!1s0x3bded75a721034a1:0xf4d25a7d818a6ace!2m2!1d74.7892951!2d21.0815474?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D" target="_blank"><p><strong>GET DIRECTIONS</strong></p></a>
+     
+      <p>मोबाईल : +91 74209888933</p>
+      <p><strong>029383</strong></p>
+    </div>
+
+  </div>
+</section>
+
+
+
+     <footer>
+    <div class="wrap f-wrap">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
+        <div style="font-weight:700">© <span id="year"></span> Gram Panchayat</div>
+        <div class="light">All rights reserved</div>
+      </div>
+      <small class="light"> Developed By SmartTech Services | +91 8484836988  - Designed with care • Responsive • Bilingual</small>
+    </div>
+  </footer>
+
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>       
+     </script> <script src="lightbox-plus-jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('nav ul#main-nav');
+  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+
+  // Guard: if elements are missing (e.g. different page), exit gracefully
+  if (!toggle || !menu) return;
+
+  // Toggle menu on hamburger click
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('show');       // add/remove .show
+    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+    // Optional: change icon from ☰ to ✖
+    toggle.textContent = isOpen ? '✖' : '☰';
+  });
+
+  // Close menu when any link clicked (for SPA behaviour or anchor links)
+  if (menuLinks.length) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+
+
+
+
+  // Optional: close menu if user taps/clicks outside the nav when open
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('show')) return;
+    if (!e.target.closest('nav')) {
+      menu.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+
+  // Optional: allow keyboard toggle via Enter/Space when focused
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+});
+</script>
+
+   
+    <script>
+    AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+    </script>
+</body>
+</html>
