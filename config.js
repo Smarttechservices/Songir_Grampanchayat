@@ -1,4 +1,4 @@
 window.APP_CONFIG = {
-  apiBaseUrl: "http://localhost:5000/api/",
-  apiImgUrl:"http://localhost:5000/"
+  apiBaseUrl: "https://songirgrampanchayat-backend.onrender.com/api/",
+  apiImgUrl:"https://songirgrampanchayat-backend.onrender.com/"
 };
