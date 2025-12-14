@@ -419,13 +419,23 @@ footer {
     background-color: rgb(245, 225, 200);
     padding: 15px 0px;
 }
-
+/* 
 .songirwallpaper {
   width: 100%;
   height: 700px;
   background: url(images/Places/songirfort.jpg);
   background-repeat: no-repeat;
   background-position: center;
+} */
+
+.songirwallpaper {
+  width: 100%;
+  height: 80vh;                 /* responsive height */
+  background-image: url(images/Places/songirfort.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;       /* 🔑 KEY LINE */
+  border-radius: 12px;
 }
 
 .section-header-organisation {
@@ -1364,6 +1374,12 @@ footer {
     font-size: 24px;
   }
 
+
+
+   .songirwallpaper {
+    height: 30vh;               /* smaller banner on mobile */
+    background-position: top;   /* shows fort properly */
+  }
 
 
 
