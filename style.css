@@ -240,7 +240,8 @@ footer {
   text-stroke: 2px black; /* For non-WebKit browsers (fallback) */
   font-weight: 800;
   letter-spacing: 1px;
-
+  background-color: #2d2b2b73;
+  padding: 0 20px;
 }
 
 
