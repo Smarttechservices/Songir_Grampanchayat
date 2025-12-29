@@ -211,7 +211,63 @@
                         </tbody>
                     </table> 
                     </div>  
-             </div>    
+             </div>   
+             
+              <div id="applicationTableSection">
+                <h3 class="text-center" style="margin-top: 30px;"><strong>सादर केलेले अर्ज</strong></h3>
+                <div class="mobile-scroll">
+                  <table class="table table-striped"  border="2" id="applicationsTable">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>कृती</th>
+                            <th>अ. क्र.</th>
+                            <th>प्रकार</th>
+                            <th>स्थिती</th>
+                            <th>अर्जदाराचे नाव</th>
+                            <th>मोबाईल क्रमांक</th>
+                            <th>ई-मेल</th>
+                            <th>पत्ता</th>
+                            <th>विषय</th>
+                            <th>आधार क्रमांक</th>
+                            <th>लिंग</th>
+                            <th>बालकाचे नाव</th>
+                            <th>बाळाचा जन्माचा पुरावा</th>
+                            <th>जन्मतारीख</th>
+                            <th>जन्मस्थान</th>
+                            <th>पालकांचा पत्ता</th>
+                            <th>वडिलांचे नाव</th>
+                            <th>आईचे नाव</th>
+                            <th>वडिलांचा आधार क्रमांक</th>
+                            <th>वडिलांचा आधार फाइल</th>
+                            <th>आईचा आधार क्रमांक</th>
+                            <th>आईचा आधार फाइल</th>
+                            <th>पतीचे नाव</th>
+                            <th>पत्नीचे नाव</th>
+                            <th>लग्नाची तारीख</th>
+                            <th>लग्नाचे वर्ष</th>
+                            <th>मृत व्यक्तीचे नाव</th>
+                            <th>मृत्यू दिनांक</th>
+                            <th>मृत्यू ठिकाण</th>
+                            <th>मृत व्यक्तीचा पत्ता (आधार)</th>
+                            <th>परवानगीपत्राचे वर्णन (NOC)</th>
+                            <th>माहिती अधिकार शीर्षक (RTI)</th>
+                            <th>बीपीएल क्रमांक (RTI)</th>
+                            <th>माहिती कालावधी (RTI)</th>
+                            <th>मिळकत क्रमांक</th>
+                            <th>मिळकतीचे क्षेत्रफळ</th>
+                            <th>बांधकाम क्षेत्रफळ</th>
+                            <!-- <th>बांधकामाचा पत्ता</th> -->
+                            <th>मिळकत गट क्रमांक</th>
+                            <th>मिळकतीची भरनाव</th>
+                            <th>सादर केलेली तारीख</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Complaints will be populated here -->
+                        </tbody>
+                    </table>  
+                </div>   
+             </div> 
 
         </section>
     </div>
@@ -922,6 +978,7 @@ document.getElementById('noticeConfirmDeleteBtn').addEventListener('click', () =
 
       $('#btnShowComplaints').hide();      
       $('#btnShowApplications').show();
+      $('#applicationTableSection').hide();
 
     function viewApplications() {
       $('#btnShowApplications').hide();
@@ -953,7 +1010,7 @@ async function loadApplications() {
 
     const token = localStorage.getItem('adminToken');
     const apiPath = window.APP_CONFIG.apiBaseUrl;
-    const resp = await fetch(apiPath+'Application',{
+    const resp = await fetch(apiPath+'SongirApplication',{
       headers:{'Autorization':'Bearer' + token }
     });
     
@@ -975,13 +1032,16 @@ async function loadApplications() {
      <td>${a.aadhar}</td>
      <td>${a.gender}</td>
      <td>${a.childName}</td>
+     <td>${a.childBirthProofUrl}</td>
      <td>${a.birthDate}</td>
      <td>${a.birthPlace}</td>
      <td>${a.parentsBirthTimeAddress}</td>
      <td>${a.fatherName}</td>
      <td>${a.motherName}</td>
      <td>${a.fatherAadhar}</td>
+     <td>${a.fatherAadharUrl}</td>
      <td>${a.motherAadhar}</td>
+     <td>${a.motherAadharUrl}</td>
      <td>${a.husbandName}</td>
      <td>${a.wifeName}</td>
      <td>${a.marriageDate}</td>
@@ -1024,7 +1084,7 @@ async function loadApplications() {
       deleteBtn.addEventListener('click', () => {
        if(confirm(`Are you sure you want to delete the Application Number ${a.id}?`));{
           const apiPath = window.APP_CONFIG.apiBaseUrl;
-           fetch(apiPath + `Application/${a.id}`,{
+           fetch(apiPath + `SongirApplication/${a.id}`,{
               method:'DELETE',
               headers: {'Autorization' : 'Bearer' + token}
           })
@@ -1040,7 +1100,7 @@ async function loadApplications() {
       actionBtn.addEventListener('click', async () => {
         if(confirm(`Are you sure you want to change the status of Application No. ${a.id}?`)){
           const apiPath = window.APP_CONFIG.apiBaseUrl;
-         const res =  await fetch(apiPath + `Application/status/${a.id}`,{
+         const res =  await fetch(apiPath + `SongirApplication/status/${a.id}`,{
           method : 'patch',
           headers: {'Authorization' : 'Bearer' + token}          
          });
@@ -1067,7 +1127,16 @@ async function loadApplications() {
 }
 
 
+function renderDocumentLink(url, label = "View") {
+    if (!url) return `<span style="color:gray;">Not Uploaded</span>`;
 
+    return `
+      <a href="${url}" target="_blank" download
+         class="btn btn-sm btn-primary">
+         ${label}
+      </a>
+    `;
+}
 
 
 

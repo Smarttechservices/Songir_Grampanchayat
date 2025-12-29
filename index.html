@@ -188,6 +188,136 @@
   }
 } */
 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ORANGE HEADER BAR */
+.gp-header-bar {
+    background-color:#c39252; /* exact orange tone */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 30px;
+    width: 100%;
+}
+
+/* LEFT TEXT */
+.gp-header-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 55px;
+}
+
+.gp-header-small {
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 3px;
+}
+
+.gp-header-main {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* RIGHT PHONE */
+.gp-header-right {
+    font-size: 35px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* IMAGE STRIP */
+.gp-image-strip {
+    display: flex;
+    width: 100%;
+    height: 320px; /* matches screenshot height */
+    overflow: hidden;
+}
+
+/* IMAGES */
+/* .gp-image-strip img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+} */
+
+/* .gp-image-strip {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+} */
+
+.gp-image-strip a {
+    flex: 1;
+    display: block;            /* CRITICAL */
+}
+
+.gp-image-strip img {
+    width: 100%;
+    height: 320px;             /* adjust as needed */
+    object-fit: cover;
+    display: block;            /* removes bottom white gap */
+}
+
+
+@media (max-width: 768px) {
+
+    /* HEADER BAR */
+    .gp-header-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 15px;
+    }
+
+    .gp-header-left {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .gp-header-small {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .gp-header-main {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .gp-header-right {
+        font-size: 20px;
+    }
+      .gp-image-strip {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 6px;
+        height: auto;
+        background-color: #f5f5f5; /* subtle neutral background */
+    }
+
+    .gp-image-strip a {
+        width: 100%;
+        display: block;
+    }
+
+    .gp-image-strip img {
+        width: 100%;
+        height: 160px;          /* FIXED → prevents stretch */
+        object-fit: cover;
+        border-radius: 4px;
+        display: block;
+    }
+}
+
+
 
     </style>
 
@@ -255,6 +385,13 @@
                 ग्रामपंचायतीत निवडून आलेले लोकप्रतिनिधी (पंच, सरपंच) व प्रशासनिक कर्मचारी मिळून गावाच्या रोजच्या समस्या सोडवतात. 
                 हे संस्थात्मक स्वरूप पाणीपुरवठा, स्वच्छता, सार्वजनिक आरोग्य, शिक्षण आणि स्थानिक पायाभूत सुविधा उभारणीसाठी महत्त्वाचे आहे. 
                 ग्रामपंचायत स्थानिक लोकांच्या सहभागामुळे निर्णय घेते आणि स्थानिक विकासाचे नियोजन व अंमलबजावणी करते..
+            </p>
+            <p style="text-align: justify;">
+                   संताची भूमी म्हणून ओळखली जाणारी सुवर्णगिरी. येथे अनेक धार्मिक स्थळे आहेत. प्रामुख्याने सिद्धपरमहंस असे गुरुगोविंद महाराजांचे मंदिर, परिसर आनंदवन संस्थान भव्य आहे. तसेच राम, कृष्ण, हनुमान, शंकर व जैन धर्माचे मंदिर आहेत. इतरही अनेक मंदिरे आहेत. गावाच्या चारही बाजुला मुस्लीम संतांची स्थळे आहेत. बालाजी मंदिरात दरवर्षी रथयात्रा असते. येथील रथ ३३ फुट उंच असा असाधारण रथ आहे. अश्विन शुद्ध एकादशीला रथाची गावातून मिरवणुक निघते. त्यावेळेस गावात पंचक्रोशीतील भाविक जमतात व गावाला यात्रेचे स्वरुप प्राप्त होते.
+
+              सुवर्णगिरी हे तसे परिसरातील बाजारपेठेचे केंद्र आहे. शेती पुर्णतः पावसावर अवलंबुन आहे. तांबट कासारांचा प्रमुख व्यवसाय तांब्या पितळेची भांडी बनविणे आहे. येथील भांडी प्रसिद्ध आहेत. धनगर समाजाचा व्यवसाय मेंढीपालन, घोंगड्या, कांबळ, जीन बनविणे आहे. सुवर्णगिरीच्या आसपास २५ ते ३० खेडी आहेत. त्या खेड्यांचा व्यापारी संबंध सुवर्णगिरीशी आहे. येथे गुरुवारी आठवडा बाजार भरतो.
+
+              सुवर्णगिरीत प्राथमिक शाळा, विद्यालय, कनिष्ठ महाविद्यालय व कला, विज्ञान व वाणिज्य महाविद्यालय आहे. गावाच्या दक्षिणेला धुळे-नंदुरबार, मुंबई-आग्रा महामार्गाच्यामध्ये महाविद्यालयाची सुशोभीत इमारत आहे. सुवर्णगिरीत पंचशील वाचनालय म्हणुन समृद्ध ग्रंथ भांडार आहे व सर्व साहित्याने परिपूर्ण अशी बजरंग व्यायामशाळा व गुरुगोविंद व्यायामशाळा आहे.
             </p>
 
             <h3 class="section-title">लोकसंख्या</h3>
@@ -409,6 +546,49 @@
     </div>
     </section>
 
+    <section>
+       <div class="gp-header-bar">
+        <div class="gp-header-left">
+            <span class="gp-header-small">
+                भारतातील पंचायती राज हे ग्रामीण स्थानिक स्वराज्य प्रणालीचे प्रतीक आहे.
+            </span>
+            <span class="gp-header-main">
+                जन्म, मृत्यू व विवाह यांची नोंदणी अवश्य करा
+            </span>
+        </div>
+
+        <div class="gp-header-right">
+            <!-- <span class="gp-phone">☎ +91 - 74209888933</span> -->
+            <span class="gp-phone"> <i class="fa-solid fa-phone-volume"></i> +91-74209888933</span>
+        </div>
+    </div>
+
+
+    <div class="gp-image-strip">
+      <a href="images/Places/indeximg1.jpeg" data-lightbox="gallery" data-title="श्री दुर्गा माता दौड">
+        <img src="images/Places/indeximg1.jpeg" alt="">
+      </a>
+
+      <a href="images/Places/indeximg3.jpeg" data-lightbox="gallery">
+        <img src="images/Places/indeximg3.jpeg" alt="">
+      </a>
+
+      <a href="images/Places/indeximg4.jpeg" data-lightbox="gallery">
+        <img src="images/Places/indeximg4.jpeg" alt="">
+      </a>
+
+      <a href="images/Places/indeximg2.jpeg" data-lightbox="gallery">
+        <img src="images/Places/indeximg2.jpeg" alt="">
+      </a>
+    </div>
+
+
+
+    </section>
+
+
+
+
     <section class="social-section">
       <div class="container-social">
         
@@ -439,6 +619,7 @@
 
       </div>
     </section>
+
 
 
 
@@ -519,10 +700,13 @@
       <h3>महत्वाच्या लिंक</h3>
       <ul>
         <li> <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank" rel="noopener noreferrer">शासन निर्णय</a></li>
-        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
+        <li> <a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">आपले सरकार</a></li>
+        <li><a href="https://mahasamvad.in/" target="_blank" rel="noopener noreferrer">महासंवाद</a></li>
         <li><a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a></li>
         <li><a href="https://www.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">महा ऑनलाइन</a></li>
-        <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+        <li><a href="https://dhule.gov.in/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+        <li><a href="https://rdd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">ग्राम विकास व पंचायतराज विभाग</a></li>
+        <li><a href="https://gpdp.nic.in/" target="_blank" rel="noopener noreferrer">ग्राम पंचायत डेवलपमेंट प्लान कैंपेन</a></li>
       </ul>
     </div>
 
@@ -532,7 +716,12 @@
       <ul>
         <li><a href="https://ceoelection.maharashtra.gov.in/ceo/" target="_blank" rel="noopener noreferrer">मतदार यादीत नाव शोधण्यासाठी</a></li>
         <li><a href="https://mahadbtmahait.gov.in/Farmer/AgriLogin/AgriLogin" target="_blank" rel="noopener noreferrer">कृषी विभाग महाडीबीटी</a></li>
+        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
         <li><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">7/12 उतारा</a></li>
+        <li><a href="https://panchayat.gov.in/" target="_blank" rel="noopener noreferrer">पंचायती राज मंत्रालय</a></li>
+        <li><a href="https://egramswaraj.gov.in/" target="_blank" rel="noopener noreferrer">ई-ग्राम स्वराज</a></li>
+        <li><a href="https://mahaegram.co.in/GeneralPages/Home.aspx" target="_blank" rel="noopener noreferrer">महा-ई-ग्राम</a></li>
+        <li><a href="https://auditonline.gov.in/" target="_blank" rel="noopener noreferrer">ऑनलाइन लेखापरीक्षण</a></li>
       </ul>
     </div>
 
@@ -574,7 +763,8 @@
 <script src="utils.js"></script>
 <script src="config.js"></script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>      
+</script> <script src="lightbox-plus-jquery.js"></script>
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>

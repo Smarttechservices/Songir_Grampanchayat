@@ -762,7 +762,7 @@ footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 340px; /* adjust height as needed */
+    height: 560px; /* adjust height as needed */
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
@@ -1195,6 +1195,20 @@ footer {
 }
 
 
+
+ #applicationsTable {        
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-scroll {
+    max-height: 700px;        /* required */
+    overflow-y: auto;         /* vertical scrollbar */
+    overflow-x: auto;         /* horizontal if needed */
+}
+
+
+
     /* ---------------------------------------------------All styel changes for Resonsive website for Mobile View---------------------------------  */
 
 
@@ -1452,6 +1466,7 @@ footer {
     min-width: 600px;   /* adjust based on your actual table width needs */
   }
 
+ 
   
 .officials-container {
   /* display: flex;

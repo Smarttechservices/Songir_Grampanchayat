@@ -97,6 +97,95 @@
       margin-top: 25px;
     }
 
+
+    .table-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Small top heading */
+.table-slide-title {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Main title bar */
+.table-title {
+  background: #3f5c78;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Table base */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px;
+}
+
+/* Header columns */
+.custom-table thead th {
+  padding: 16px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.col-1 {
+  background: #5579a8;
+  width: 50%;
+}
+
+.col-2 {
+  background: #6ea3c9;
+  width: 50%;
+}
+
+/* Left column cells (teal background) */
+.left-col {
+  background: #6fbfc4;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 18px;
+  font-size: large;
+}
+
+/* Right column cells */
+.right-col {
+  background: #f3f3f3;
+  /* color: #777; */
+  color: #272727;
+  text-align: center;
+  font-weight: 600;
+  padding: 18px;
+  font-size: x-large;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-title {
+    font-size: 18px;
+
+  }
+
+  .custom-table {
+    font-size: 14px;
+  }
+  .right-col{
+    font-size: medium;
+  }
+  .left-col{
+    font-size: medium;
+  }
+}
     
     </style>
 
@@ -154,9 +243,7 @@
             <li><a href="apply.html">📝 अर्ज</a></li>
              <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
             
-        </ul>
-
-       
+        </ul>    
     </nav>
 
     <section class="welcome-section-about" style="display: flex; flex-direction: column;">
@@ -164,24 +251,17 @@
             <h2 class="section-title-about">आमच्याशी संपर्क करा</h2>
                     <div class="contact-info-contact">
                     <p><strong>पत्ता :</strong>  सोनगीर पोस्ट, ता. धुळे (धुळे) . </p>
-                    <p><strong>फोन :</strong> +91-74209888933</p>
-                    <!-- <p><strong>फॅक्स :</strong> +91-020-87654321</p> -->
+                    <p><strong>फोन :</strong> +91-74209888933</p>         
                     <p><strong>ईमेल :</strong>  dhule.go.songir@gmail.com</p> 
-                    <!-- <p><strong>मार्गदर्शन मिळवा :</strong> Open in Google Maps</p> -->
                     <p><strong>कार्यालय वेळ :</strong> सकाळी १०:३० ते सायंकाळी ५:३० वाजे पर्यंत.</p>
                     </div>
-
-           
-
-            
-                
            
         </div>
 
          <div class="info-card" data-aos="fade-left">
           <h3 class="section-title-about">गावचा नकाशा</h3>
           <p>या नकाशा मदतीने गावातील महत्त्वाच्या रस्ते, ठिकाणे आणि कार्यालयांची माहिती तसेच त्यांचे अचूक स्थान सहज पाहता येईल.</p>
-                    <!-- Responsive Google Maps embed: replace src with your place's embed link if available -->
+                   
                   <iframe
                     title="Mahadeo Nagar Map"
                     src="https://www.google.com/maps?q=Songir,+Maharashtra&z=15&output=embed"
@@ -192,15 +272,166 @@
                     referrerpolicy="no-referrer-when-downgrade">
                   </iframe>
 
-          </div>        
-            
+          </div>       
+          
+          <div class="info-card" data-aos="fade-left">
+          <h3 class="section-title-about">नागरिकांसाठी तत्काळ सेवा</h3>
 
+          <div class="table-wrapper" data-aos="fade-right">
+            <div class="table-title">
+              महिला व बाल सुरक्षा
+            </div>
+
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th class="col col-1">विभाग</th>
+                  <th class="col col-2">हेल्पलाईन क्रमांक</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="left-col">महिला हेल्पलाईन</td>
+                  <td class="right-col">१०९१</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">कौटुंबिक हिंसाचार मदत</td>
+                  <td class="right-col">१८१</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">चाइल्ड हेल्पलाईन (मुलांसाठी)</td>
+                  <td class="right-col">१०९८</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">बेपत्ता मुले आणि महिला</td>
+                  <td class="right-col">१०९४</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="table-wrapper" data-aos="fade-left">
+
+            <div class="table-title">
+              आपत्कालीन सेवा
+            </div>
+
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th class="col col-1">विभाग</th>
+                  <th class="col col-2">हेल्पलाईन क्रमांक</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="left-col">राष्ट्रीय आपत्कालीन क्रमांक</td>
+                  <td class="right-col">११२</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">पोलीस</td>
+                  <td class="right-col">१००</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">अग्निशमन दल (Fire)</td>
+                  <td class="right-col">१०१</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">रुग्णवाहिका (Ambulance)</td>
+                  <td class="right-col">१०२ / १०८</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">आपत्ती व्यवस्थापन (Disaster Management)</td>
+                  <td class="right-col">१०७७</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="table-wrapper" data-aos="fade-right">
+
+            <div class="table-title">
+              इतर महत्त्वाच्या सेवा (Other Important Services)
+            </div>
+
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th class="col col-1">विभाग</th>
+                  <th class="col col-2">हेल्पलाईन क्रमांक</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="left-col">सायबर क्राईम (Cyber Crime)</td>
+                  <td class="right-col">१९३०</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">वैद्यकीय सल्ला (Medical Advice)</td>
+                  <td class="right-col">१०४</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">शेतकरी कॉल सेंटर (Kisan Call Centre)</td>
+                  <td class="right-col">१५५१</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">मतदार हेल्पलाईन (Voter Helpline)</td>
+                  <td class="right-col">१९५०</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">रेल्वे चौकशी</td>
+                  <td class="right-col">१३९</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">रेल्वे अपघात आपत्कालीन सेवा</td>
+                  <td class="right-col">१०७२</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">एलपीजी (LPG) गॅस गळती</td>
+                  <td class="right-col">१९०६</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">ज्येष्ठ नागरिक सुरक्षा</td>
+                  <td class="right-col">१०९१ / १२९१</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">मानसिक आरोग्य (Tele-MANAS)</td>
+                  <td class="right-col">१४४१६</td>
+                </tr>
+
+                <tr>
+                  <td class="left-col">रेशन (PDS) हेल्पलाईन</td>
+                  <td class="right-col">१८००-२२-४९५०</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>              
+   
+          </div>
         
     </section>
-
-
-
-      
+     
     <div class="modal fade" id="complaintModal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -223,20 +454,7 @@
               <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा" required>
             </div>
 
-            <!-- <div class="mb-3">
-              <label class="form-label required">तक्रार / सूचना प्रकार :</label>
-              <select class="form-control" id="reasonDropdown">
-                <option value="">-- निवडा --</option>
-                <option value="complaint">पाणी प्रश्न</option>
-                <option value="suggestion">स्वच्छता</option>
-                <option value="complaint">गटार चेंबर</option>
-                <option value="suggestion">रस्ते वाहतूक</option>
-                <option value="complaint">पथ दिवे</option>
-                <option value="suggestion">घंटा गाडी</option>
-                <option value="complaint">इतर</option>
-                
-              </select>
-            </div> -->
+           
 
             <div class="mb-3">
               <label class="form-label">तक्रार / सूचना निवडा :</label>
@@ -286,14 +504,17 @@
   <div class="footer-container">
 
     <!-- Column 1 -->
-    <div class="footer-col">
+     <div class="footer-col">
       <h3>महत्वाच्या लिंक</h3>
       <ul>
         <li> <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank" rel="noopener noreferrer">शासन निर्णय</a></li>
-        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
+        <li> <a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">आपले सरकार</a></li>
+        <li><a href="https://mahasamvad.in/" target="_blank" rel="noopener noreferrer">महासंवाद</a></li>
         <li><a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a></li>
         <li><a href="https://www.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">महा ऑनलाइन</a></li>
-        <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+        <li><a href="https://dhule.gov.in/" target="_blank" rel="noopener noreferrer">माहिती अधिकार</a></li>
+        <li><a href="https://rdd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">ग्राम विकास व पंचायतराज विभाग</a></li>
+        <li><a href="https://gpdp.nic.in/" target="_blank" rel="noopener noreferrer">ग्राम पंचायत डेवलपमेंट प्लान कैंपेन</a></li>
       </ul>
     </div>
 
@@ -303,7 +524,12 @@
       <ul>
         <li><a href="https://ceoelection.maharashtra.gov.in/ceo/" target="_blank" rel="noopener noreferrer">मतदार यादीत नाव शोधण्यासाठी</a></li>
         <li><a href="https://mahadbtmahait.gov.in/Farmer/AgriLogin/AgriLogin" target="_blank" rel="noopener noreferrer">कृषी विभाग महाडीबीटी</a></li>
+        <li><a href="https://zpdhule.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">धुळे जिल्हा परिषद</a></li>
         <li><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">7/12 उतारा</a></li>
+        <li><a href="https://panchayat.gov.in/" target="_blank" rel="noopener noreferrer">पंचायती राज मंत्रालय</a></li>
+        <li><a href="https://egramswaraj.gov.in/" target="_blank" rel="noopener noreferrer">ई-ग्राम स्वराज</a></li>
+        <li><a href="https://mahaegram.co.in/GeneralPages/Home.aspx" target="_blank" rel="noopener noreferrer">महा-ई-ग्राम</a></li>
+        <li><a href="https://auditonline.gov.in/" target="_blank" rel="noopener noreferrer">ऑनलाइन लेखापरीक्षण</a></li>
       </ul>
     </div>
 
