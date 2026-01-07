@@ -267,6 +267,279 @@
 }
 
 
+
+/*------------------------------------------------Inauguration Banner Loads Once--------------------------------------------------*/
+
+/* Overlay */
+.banner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Banner Box */
+.banner-box {
+  background: linear-gradient(90deg,orange,red);
+  width: 90%;
+  max-width: 950px;
+  min-width: 850px;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  animation: scaleIn 0.6s ease;
+  border: 5px dashed white;
+  /* max-height: 750px; */
+}
+
+/* Headings */
+.banner-box h1 {
+  font-size: 28px;
+  color: #eef7ef;
+  margin-bottom: 10px;
+}
+
+/* .diya-container
+{
+  margin: 15px 0;
+} */
+
+.banner-box h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.guest-name {
+  font-size: 18px;
+  font-weight: bold;
+  color:beige
+}
+
+.message {
+  margin: 10px 0;
+  font-size: 16px;
+  color: antiquewhite;
+}
+
+/* Button */
+#inaugurateBtn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background: #75da9d;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#inaugurateBtn:hover {
+  background: #145c3c;
+}
+
+/* Overlay Effects Container */
+.overlay-effects {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Ensure banner stays on top */
+.banner-box {
+  position: relative;
+  z-index: 5;
+}
+
+/* 🌸 Flower Layer */
+.flower-layer span {
+  position: absolute;
+  font-size: 22px;
+  animation: floatFlower 6s linear infinite;
+  opacity: 0.8;
+}
+
+/* 🎆 Firework Particles */
+.fireworks-layer span {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #f5dd07, #fa3f07,green,blue);
+  border-radius: 50%;
+  /* animation: firework 1.2s ease-out forwards; */
+  
+  /* background: radial-gradient(circle, #fff, transparent); */
+  animation: fireworkBig 1.6s ease-out forwards;
+}
+
+
+
+
+/* Fireworks Video */
+.fireworks-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  z-index: -999;
+  pointer-events: none;
+}
+
+/* Darken video slightly */
+.banner-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* Banner above everything */
+.banner-box {
+  position: relative;
+  z-index: 5;
+}
+
+
+
+
+
+/* Diya Styling */
+.diya-container {
+  font-size: 36px;
+  margin-bottom: 15px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Diya Glow Effect */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff9800;
+  }
+  to {
+    text-shadow: 0 0 20px #ff9800;
+  }
+}
+
+/* Celebration Fade-out */
+.banner-overlay.fade-out {
+  animation: fadeOut 1.2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* Flower Floating Animation */
+@keyframes floatFlower {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  100% {
+    transform: translateY(-120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Firework Burst */
+@keyframes firework {
+  0% {
+    transform: scale(0);
+    opacity: 25;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+    opacity: 50;
+  }
+}
+
+
+/* Bigger & longer explosion */
+@keyframes fireworkBig {
+  0% {
+    transform: scale(0);
+    opacity: 15;
+  }
+  80% {
+    opacity: 40;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.2);
+    opacity: 95;
+  }
+}
+
+/* Extra Flower Burst on Click */
+.celebration span {
+  position: fixed;
+  font-size: 26px;
+  animation: burst 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-150px);
+    opacity: 0;
+  }
+}
+
+
+/* Flower Animation */
+.flowers span {
+  position: absolute;
+  top: -20px;
+  font-size: 24px;
+  animation: fall 4s linear infinite;
+}
+
+.flowers span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.flowers span:nth-child(2) { left: 30%; animation-delay: 1s; }
+.flowers span:nth-child(3) { left: 50%; animation-delay: 2s; }
+.flowers span:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.flowers span:nth-child(5) { left: 90%; animation-delay: 0.5s; }
+
+/* Animations */
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(350px); opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+
+
+/*------------------------------------------------Inauguration Banner Loads Once--------------------------------------------------*/
+
+
 @media (max-width: 768px) {
 
     /* HEADER BAR */
@@ -319,6 +592,11 @@
 
 
 
+
+
+
+
+
     </style>
 
     <meta name="google" content="notranslate">
@@ -357,12 +635,30 @@
         <ul id="main-nav">
             <li class="active"><a href="#">🏠 मुख्यपृष्ठ</a></li>
             <li><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
-            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li class="dropdown" >
+                <a href="#" class="dropdown-toggle" aria-expanded="false">
+                    👥 संघटना <span class="arrow"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="organisation.html">पदाधिकारी</a></li>
+                    <li><a href="Samiti.html">कार्यकारी मंडळ व विभाग</a></li>
+                    <li><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
+                </ul>
+            </li>
+            <!-- <li>👥 संघटना
+               <select name="organisation" id="organisation">
+              <a href="organisation.html"> <option value="Organisation">पदाधिकारी </option></a> 
+              <a href="Samiti.html"> <option value="Sectors">कार्यकारी मंडळ व विभाग</option></a> 
+             <a href="organisation.html"><option value="Staff">ग्रामस्तरीय कर्मचारी</option></a>   
+              <a href="organisation.html"><option value="audi">Audi</option></a>   
+              </select>
+            </a></li> -->
+           
             <li><a href="services.html">🤝 सेवा</a></li>
             <li><a href="schemes.html">📍 योजना</a></li>
             <li><a href="gallery.html">🖼️ गॅलरी</a></li>
             <li><a href="contact.html">📞 संपर्क</a></li>
-            <li><a href="apply.html">📝 अर्ज</a></li>
+            <!-- <li><a href="apply.html">📝 अर्ज</a></li> -->
             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>          
         </ul>    
       </nav>
@@ -520,6 +816,33 @@
     </section>
 
 
+     <section class="officials-section">
+    <h2  data-aos="fade-up" class="section-title-photo">जिल्हा स्तरीय प्रशासन</h2>
+    <div data-aos="fade-up" class="officials-container">
+        <div class="official-card">
+        <img src="images/Jaykumar_Raval.jpg" alt="श्री. मेघःशाम हिरकणी रोहिदास बोरसेजयकुमार रावल">
+        <h3>श्री. जयकुमार रावल</h3>
+        <p>माननीय पालकमंत्री (धुळे जिल्हा)</p>
+        </div>
+         <div class="official-card">
+        <img src="images/Shobha_Bacchav.png" alt="श्रीमती शोभा दिनेश बच्छाव">
+        <h3>श्रीमती शोभा दिनेश बच्छाव</h3>
+        <p>माननीय खासदार (धुळे जिल्हा)</p>
+        </div>
+        <div class="official-card">
+        <img src="images/Amrish_Bhai_Patel.jpg" alt="श्री अमरिशभाई पटेल">
+        <h3>श्री. अमरिशभाई पटेल</h3>
+        <p>माननीय विधान परिषद सदस्य</p>
+        </div>
+        <div class="official-card">
+        <img src="images/Ramdada_Bhadane.avif" alt="श्री रामदादा भदाने">
+        <h3>श्री. रामदादा भदाने</h3>
+        <p>माननीय विधानसभा सदस्य</p>
+        </div>       
+    </div>
+    </section>
+
+
     <section class="officials-section">
     <h2  data-aos="fade-up" class="section-title-photo">पदाधिकारी</h2>
     <div data-aos="fade-up" class="officials-container">
@@ -619,6 +942,70 @@
 
       </div>
     </section>
+
+<!-- /////////////////////////////////////Banner Loads Once When Loaded ///////////////////////////// -->
+
+
+    <!-- Inauguration Banner -->
+<div id="inaugurationBanner" class="banner-overlay">
+
+  <!-- Fireworks Video Background -->
+<video class="fireworks-video" autoplay muted loop playsinline>
+  <source src="images/FireCrackers.mp4" type="video/mp4">
+</video>
+  
+  <div class="flower-layer"></div>
+  <div class="fireworks-layer"></div>
+
+  <div class="banner-box">
+    
+    <!-- Flower Animation -->
+    <div class="flowers">
+      <span>🌸</span>
+      <span>🌼</span>
+      <span>🌺</span>
+      <span>🌸</span>
+      <span>🌼</span>
+    </div>
+
+    <!-- Diya Section -->
+    <div class="diya-container float-center">
+      🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 
+    </div>
+     <!-- <div class="diya-container">
+      🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 🪔 🪔🪔 
+    </div> -->
+    <div></div>
+
+    <h1><strong>सोनगीर ग्रामपंचायत आपले हार्दिक स्वागत करत आहे...</strong></h1>
+    <h2><strong>उद्घाटन समारंभ</strong></h2>
+    <img src="images/Places/DemoImage.png" style="width: 80%; height: 350px;">
+    <h2><strong>शुभ हस्ते उद्घाटन</strong></h2>
+    <p class="guest-name">
+      मा.रामदादा भदाणे आमदार साहेब 
+      ( धुळे – सोनगीर विधानसभा मतदारसंघ )
+    </p>
+
+    <p class="message">
+      एकत्र येऊया विकास, पारदर्शकता आणि सेवेसाठी
+    </p>
+    <p class="message">
+      लोकसहभागातून समृद्ध आणि विकसित गावाकडे वाटचाल
+    </p>
+    <img src="images/Places/GrandOpeningImg1.png" style="width: 95%; height: 100px;">
+
+    <button id="inaugurateBtn">उद्घाटन करा</button>
+
+     <div>
+          <div class="diya-container float-center">
+            🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 
+          </div>
+          <!-- <div class="diya-container float-end">
+            🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 🪔 🪔🪔 
+          </div> -->
+     </div>
+  </div>
+</div>
 
 
 
@@ -768,57 +1155,158 @@
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const menu = document.querySelector('nav ul#main-nav');
-  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+  window.onload = function () {
+    const banner = document.getElementById("inaugurationBanner");
+    const button = document.getElementById("inaugurateBtn");
 
-  // Guard: if elements are missing (e.g. different page), exit gracefully
-  if (!toggle || !menu) return;
+    // Check if already inaugurated
+    if (!localStorage.getItem("inaugurationDone")) {
+      banner.style.display = "flex";
+    }
 
-  // Toggle menu on hamburger click
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('show');       // add/remove .show
-    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
-    // Optional: change icon from ☰ to ✖
-    toggle.textContent = isOpen ? '✖' : '☰';
-  });
-
-  // Close menu when any link clicked (for SPA behaviour or anchor links)
-  if (menuLinks.length) {
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
+    button.addEventListener("click", function () {
+      banner.style.display = "none";
+      localStorage.setItem("inaugurationDone", "true");
     });
+  };
+
+  const flowerLayer = document.querySelector(".flower-layer");
+  const fireworksLayer = document.querySelector(".fireworks-layer");
+
+/* 🌸 Floating Flowers */
+function createFlower() {
+  const flower = document.createElement("span");
+  flower.innerHTML = "🌸";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = 5 + Math.random() * 3 + "s";
+  flowerLayer.appendChild(flower);
+
+  setTimeout(() => flower.remove(), 8000);
+}
+setInterval(createFlower, 600);
+
+/* 🎆 Fireworks */
+function createFirework() {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight * 0.5;
+
+  for (let i = 0; i < 12; i++) {
+    const spark = document.createElement("span");
+    spark.style.left = x + "px";
+    spark.style.top = y + "px";
+
+    spark.style.setProperty("--x", (Math.random() * 200 - 100) + "px");
+    spark.style.setProperty("--y", (Math.random() * 200 - 100) + "px");
+
+    fireworksLayer.appendChild(spark);
+    setTimeout(() => spark.remove(), 1200);
   }
+}
+setInterval(createFirework, 2000);
 
 
+function createFireworksShow() {
 
+  // Number of fireworks at same time
+  const bursts = 5;
 
+  for (let b = 0; b < bursts; b++) {
 
-  // Optional: close menu if user taps/clicks outside the nav when open
-  document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('show')) return;
-    if (!e.target.closest('nav')) {
-      menu.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+    // Random side (left, center, right)
+    const side = Math.random();
+    let baseX;
+
+    if (side < 0.33) {
+      baseX = Math.random() * window.innerWidth * 0.3; // left
+    } else if (side < 0.66) {
+      baseX = window.innerWidth * 0.35 + Math.random() * window.innerWidth * 0.3; // center
+    } else {
+      baseX = window.innerWidth * 0.7 + Math.random() * window.innerWidth * 0.3; // right
     }
-  });
 
-  // Optional: allow keyboard toggle via Enter/Space when focused
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle.click();
+    const baseY = Math.random() * window.innerHeight * 0.5 + 50;
+
+    const colors = [
+      "#ff5252", "#ffeb3b", "#69f0ae",
+      "#40c4ff", "#e040fb", "#ffffff"
+    ];
+
+    // Each firework burst
+    for (let i = 0; i < 24; i++) {
+      const spark = document.createElement("span");
+
+      spark.style.left = baseX + "px";
+      spark.style.top = baseY + "px";
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 120 + Math.random() * 120;
+
+      spark.style.setProperty("--x", Math.cos(angle) * distance + "px");
+      spark.style.setProperty("--y", Math.sin(angle) * distance + "px");
+
+      spark.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      fireworksLayer.appendChild(spark);
+
+      setTimeout(() => spark.remove(), 1600);
     }
-  });
-});
+  }
+}
+
+/* Run fireworks continuously */
+setInterval(createFireworksShow, 2500);
 
 
+/* --------------------------------------------Inauguration Banner Ends----------------------------------*/
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const toggle = document.querySelector('.mobile-nav-toggle');
+//   const menu = document.querySelector('nav ul#main-nav');
+//   const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+
+//   // Guard: if elements are missing (e.g. different page), exit gracefully
+//   if (!toggle || !menu) return;
+
+//   // Toggle menu on hamburger click
+//   toggle.addEventListener('click', () => {
+//     const isOpen = menu.classList.toggle('show');       // add/remove .show
+//     toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+//     // Optional: change icon from ☰ to ✖
+//     toggle.textContent = isOpen ? '✖' : '☰';
+//   });
+
+//   // Close menu when any link clicked (for SPA behaviour or anchor links)
+//   if (menuLinks.length) {
+//     menuLinks.forEach(link => {
+//       link.addEventListener('click', () => {
+//         menu.classList.remove('show');
+//         toggle.setAttribute('aria-expanded', 'false');
+//         toggle.textContent = '☰';
+//       });
+//     });
+//   }
+
+
+//   // Optional: close menu if user taps/clicks outside the nav when open
+//   document.addEventListener('click', (e) => {
+//     if (!menu.classList.contains('show')) return;
+//     if (!e.target.closest('nav')) {
+//       menu.classList.remove('show');
+//       toggle.setAttribute('aria-expanded', 'false');
+//       toggle.textContent = '☰';
+//     }
+//   });
+
+//   // Optional: allow keyboard toggle via Enter/Space when focused
+//   toggle.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter' || e.key === ' ') {
+//       e.preventDefault();
+//       toggle.click();
+//     }
+//   });
+// });
 
 
 //--------------------------------------------population Counter effect--------------------------------------

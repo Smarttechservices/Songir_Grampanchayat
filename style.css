@@ -97,6 +97,11 @@ nav {
             color: #34a853;
         }
 
+
+
+
+
+
 .container {
     padding: 20px;
 }
@@ -1026,22 +1031,22 @@ footer {
 }
 
      /* SECTIONS  Schemes Form*/
-    section-schemes{padding:42px 0; min-height: 70vh; margin-bottom: 25px;}
+    /* section-schemes{padding:42px 0; min-height: 70vh; margin-bottom: 25px;} */
 .section-title-schemes {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 0px;
-  padding: 10px;              /* background साठी padding */
-  background-color: #2c3e50;  /* 👈 तुला हवे ते colour (उदा. dark blue/green) */
-  border-radius: 8px;         /* थोडे गोल कोपरे */
+  /* gap: 12px; */
+  /* margin-bottom: 0px; */
+  padding: 0px;              /* background साठी padding */
+  background-color: rgb(150, 119, 79);  /* 👈 तुला हवे ते colour (उदा. dark blue/green) */
+  /* border-radius: 0px;         थोडे गोल कोपरे */
 }
 
 .section-title-schemes h2 {
   margin: 0;
-  color: #ffffff;             /* 👈 text colour (white) */
-  font-size: 24px;
+  color: #fafafa;             /* 👈 text colour (white) */
+  font-size: 30px;
   font-weight: 600;
 }
     .muted{color:var(--muted);font-size:14px}
@@ -1209,6 +1214,90 @@ footer {
 }
 
 
+/*----------------------------------- संघटना Dropdown---------------------------------- */
+
+/* Dropdown should ALWAYS be closed by default */
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle link */
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* background: #ffffff; */    
+    background-color: #f0f0f0;  
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 8px 0;
+    z-index: 1000;
+    
+    list-style: none;
+    padding-left: 15px;
+}
+
+/* Dropdown items */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f3f5;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .dropdown-menu {
+    display: none;
+}
+
+
+
+/* .dropdown-menu li a.active,
+.dropdown-menu li.active a {
+    background: none !important;
+    color: inherit !important;
+} */
+
+
+
+/* ================= NAVBAR DROPDOWN---Mobile  ================= */
+
+/* Desktop hover (optional) */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+/*----------------------------------- संघटना Dropdown---------------------------------- */
 
     /* ---------------------------------------------------All styel changes for Resonsive website for Mobile View---------------------------------  */
 
@@ -1395,6 +1484,33 @@ footer {
     height: 30vh;               /* smaller banner on mobile */
     background-position: top;   /* shows fort properly */
   }
+
+
+
+/* -------------------------Mobile view Sanghatan Dropdown------------------- */
+
+
+/* Mobile dropdown open */
+.dropdown.open > .dropdown-menu {
+    display: block;
+}
+
+/* Arrow rotation */
+.dropdown.open .arrow {
+    transform: rotate(180deg);
+}
+
+/* Arrow animation */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu
+{
+  background-color: #000;
+  color: #f0f0f0;
+}
 
 
 

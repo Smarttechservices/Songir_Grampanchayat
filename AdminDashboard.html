@@ -187,11 +187,11 @@
             <button id="btnOpenDeleteModal" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteGalleryModal" >प्रतिमा हटवा</button>
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noticeModal" id="btnNotice"> नवीन सूचना टाका</button>
             <button id="btnOpenNoticeDeleteModal" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteNoticeModal" >सूचना हटवा</button>
-             <button id="btnShowApplications" class="btn btn-primary" onclick="viewApplications()">View Applications</button>
-            <button class="btn btn-primary" id="btnShowComplaints" onclick="viewComplaints()">View Complaints</button>
+             <!-- <button id="btnShowApplications" class="btn btn-primary" onclick="viewApplications()">View Applications</button>
+            <button class="btn btn-primary" id="btnShowComplaints" onclick="viewComplaints()">View Complaints</button> -->
 
             <div id="complaintTableSection">
-                <h3 class="text-center" style="margin-top: 30px;">सादर केलेल्या तक्रारी</h3>
+                <h3 class="text-center" style="margin-top: 30px;"><strong>सादर केलेल्या तक्रारी</strong></h3>
                 <div class="mobile-scroll">
                 <table class="table table-striped" style="margin-right:260px;" border="2" id="complaintsTable">
                         <thead class="thead-dark">
@@ -213,7 +213,7 @@
                     </div>  
              </div>   
              
-              <div id="applicationTableSection">
+              <!-- <div id="applicationTableSection">
                 <h3 class="text-center" style="margin-top: 30px;"><strong>सादर केलेले अर्ज</strong></h3>
                 <div class="mobile-scroll">
                   <table class="table table-striped"  border="2" id="applicationsTable">
@@ -256,18 +256,18 @@
                             <th>मिळकत क्रमांक</th>
                             <th>मिळकतीचे क्षेत्रफळ</th>
                             <th>बांधकाम क्षेत्रफळ</th>
-                            <!-- <th>बांधकामाचा पत्ता</th> -->
+                            // <th>बांधकामाचा पत्ता</th> 
                             <th>मिळकत गट क्रमांक</th>
                             <th>मिळकतीची भरनाव</th>
                             <th>सादर केलेली तारीख</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <!-- Complaints will be populated here -->
+                        // Complaints will be populated here 
                         </tbody>
                     </table>  
                 </div>   
-             </div> 
+             </div>  -->
 
         </section>
     </div>
@@ -277,21 +277,21 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 data-i18n="imgLabel" class="modal-title">Image Upload</h5>
+              <h5 data-i18n="imgLabel" class="modal-title">प्रतिमा टाका</h5>
               <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
               <form id="uploadForm">
                 <div class="mb-3">
-                  <lable data-i18n="imgTitleLabel" class="form-label required" >Title :</lable>
-                  <input type="text" data-i18n="nametextLabel" id="imageTitle" class="form-control" placeholder="Enter Title of the Image" required>
+                  <lable data-i18n="imgTitleLabel" class="form-label required" >शीर्षक :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageTitle" class="form-control" placeholder="प्रतिमेचे शीर्षक टाका." required>
                 </div>
                 <div class="mb-3">
-                  <lable data-i18n="imgCaptionLabel" class="form-label" >Caption :</lable>
-                  <input type="text" data-i18n="nametextLabel" id="imageCaption" class="form-control" placeholder="Enter Caption of the Image" required>
+                  <lable data-i18n="imgCaptionLabel" class="form-label" >तपशील :</lable>
+                  <input type="text" data-i18n="nametextLabel" id="imageCaption" class="form-control" placeholder="प्रतिमेचा संदर्भ टाका." required>
                 </div>
                 <div class="mb-3">
-                  <lable  class="form-label" for="uploadImage" data-i18n="imgUploadLabel">Upload Image :</lable>
+                  <lable  class="form-label" for="uploadImage" data-i18n="imgUploadLabel">प्रतिमा निवडा :</lable>
                   <div class="custom-file">
                     <!-- <input class="custom-file-input" id="imageFile"  type="file" /> -->
                     <input class="form-control form-control-sm" id="imageFile" type="file" required/>                    
@@ -300,8 +300,8 @@
              
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >Submit</button>
-                <button class="btn btn-danger" id="closebtn" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >समाविष्ट करा </button>
+                <button class="btn btn-danger" id="closebtn" data-bs-dismiss="modal">बंद करा</button>
             </div>
              </form>
           </div>
@@ -318,8 +318,8 @@
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Select Image to Delete</h5>
-        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        <h5>हटवण्यासाठी प्रतिमा निवडा</h5>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <div id="galleryLoading">Loading...</div>
@@ -334,14 +334,14 @@
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5>Confirm Delete</h5>
-          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+          <h5>हटवण्याची पुष्टी करा</h5>
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center">
           <img id="deletePreview" src="" class="img-fluid mb-2" />
           <p id="deleteCaption"></p>
-          <button id="confirmDeleteBtn" class="btn btn-danger mt-3">Delete</button>
-          <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Cancel</button>
+          <button id="confirmDeleteBtn" class="btn btn-danger mt-3">डिलीट करा</button>
+          <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">रद्द करा</button>
         </div>
       </div>
     </div>
@@ -355,7 +355,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 data-i18n="imgLabel" class="modal-title">सूचना</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
               <form id="noticeForm">
@@ -377,8 +377,8 @@
              
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >Submit</button>
-                <button class="btn btn-danger" data-bs-dismiss="modal" type="submit">Close</button>
+                <button class="btn btn-primary" data-i18n="submitLabel" type="submit" >समाविष्ट करा</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" type="submit">बंद करा</button>
             </div>
              </form>
           </div>
@@ -393,7 +393,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5>सूचना हटवा</h5>
-        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <div id="noticeLoading">Loading...</div>
@@ -408,16 +408,16 @@
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5>Confirm Delete</h5>
-          <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+          <h5>हटवण्याची पुष्टी करा</h5>
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center">
           <p id="noticeDeletePreviewID" class="modal-content"></p>
           <p id="noticeDeletePreviewTitle" class="modal-content"></p>
           <p id="noticeDeletePreviewVenue" class="modal-content"></p>
           <p id="noticeDeletePreviewDescription" class="modal-content"></p>
-          <button id="noticeConfirmDeleteBtn" class="btn btn-danger mt-3">Delete</button>
-          <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Cancel</button>
+          <button id="noticeConfirmDeleteBtn" class="btn btn-danger mt-3">डिलीट करा</button>
+          <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">रद्द करा</button>
         </div>
       </div>
     </div>
@@ -976,155 +976,155 @@ document.getElementById('noticeConfirmDeleteBtn').addEventListener('click', () =
 
 
 
-      $('#btnShowComplaints').hide();      
-      $('#btnShowApplications').show();
-      $('#applicationTableSection').hide();
+    //   $('#btnShowComplaints').hide();      
+    //   $('#btnShowApplications').show();
+    //   $('#applicationTableSection').hide();
 
-    function viewApplications() {
-      $('#btnShowApplications').hide();
-      $('#btnShowComplaints').show();   
-      $('#complaintTableSection').hide();
-      $('#applicationTableSection').show();
-      loadApplications();
+    // function viewApplications() {
+    //   $('#btnShowApplications').hide();
+    //   $('#btnShowComplaints').show();   
+    //   $('#complaintTableSection').hide();
+    //   $('#applicationTableSection').show();
+    //   loadApplications();
 
-    }
+    // }
 
  
-    function viewComplaints() {
-      $('#btnShowComplaints').hide();    
-      $('#btnShowApplications').show();
-      $('#applicationTableSection').hide();
-      $('#complaintTableSection').show();
-      loadComplaints();
+    // function viewComplaints() {
+    //   $('#btnShowComplaints').hide();    
+    //   $('#btnShowApplications').show();
+    //   $('#applicationTableSection').hide();
+    //   $('#complaintTableSection').show();
+    //   loadComplaints();
 
-    }
-
-
+    // }
 
 
-async function loadApplications() {
 
-  const tbody = document.querySelector('#applicationsTable tbody');
 
-  try{
+// async function loadApplications() {
 
-    const token = localStorage.getItem('adminToken');
-    const apiPath = window.APP_CONFIG.apiBaseUrl;
-    const resp = await fetch(apiPath+'SongirApplication',{
-      headers:{'Autorization':'Bearer' + token }
-    });
+//   const tbody = document.querySelector('#applicationsTable tbody');
+
+//   try{
+
+//     const token = localStorage.getItem('adminToken');
+//     const apiPath = window.APP_CONFIG.apiBaseUrl;
+//     const resp = await fetch(apiPath+'SongirApplication',{
+//       headers:{'Autorization':'Bearer' + token }
+//     });
     
-    const arr = await resp.json();
+//     const arr = await resp.json();
 
-    tbody.innerHTML = '';
-    arr.forEach(a => {
-    const tr = document.createElement('tr');
-     tr.innerHTML = `
-     <td></td>
-     <td>${a.id}</td>
-     <td>${a.type}</td>
-     <td style="color:${a.status === 'Completed' ? 'green' : 'red'};"><strong>${a.status}</strong></td>
-     <td>${a.applicantName}</td>
-     <td>${a.mobile}</td>
-     <td>${a.email}</td>
-     <td>${a.address}</td>
-     <td>${a.subject}</td>
-     <td>${a.aadhar}</td>
-     <td>${a.gender}</td>
-     <td>${a.childName}</td>
-     <td>${a.childBirthProofUrl}</td>
-     <td>${a.birthDate}</td>
-     <td>${a.birthPlace}</td>
-     <td>${a.parentsBirthTimeAddress}</td>
-     <td>${a.fatherName}</td>
-     <td>${a.motherName}</td>
-     <td>${a.fatherAadhar}</td>
-     <td>${a.fatherAadharUrl}</td>
-     <td>${a.motherAadhar}</td>
-     <td>${a.motherAadharUrl}</td>
-     <td>${a.husbandName}</td>
-     <td>${a.wifeName}</td>
-     <td>${a.marriageDate}</td>
-     <td>${a.marriageYear}</td>
-     <td>${a.deceasedName}</td>
-     <td>${a.deathDate}</td>
-     <td>${a.deathPlace}</td>
-     <td>${a.deceasedPermenantAddress}</td>
-     <td>${a.nocDescription}</td>
-     <td>${a.rtiTitleDescription}</td>
-     <td>${a.rtibplNumber}</td>
-     <td>${a.rtiTimePeriod}</td>
-     <td>${a.milakatNumber}</td>
-     <td>${a.milakatArea}</td>
-     <td>${a.constructionArea}</td>
+//     tbody.innerHTML = '';
+//     arr.forEach(a => {
+//     const tr = document.createElement('tr');
+//      tr.innerHTML = `
+//      <td></td>
+//      <td>${a.id}</td>
+//      <td>${a.type}</td>
+//      <td style="color:${a.status === 'Completed' ? 'green' : 'red'};"><strong>${a.status}</strong></td>
+//      <td>${a.applicantName}</td>
+//      <td>${a.mobile}</td>
+//      <td>${a.email}</td>
+//      <td>${a.address}</td>
+//      <td>${a.subject}</td>
+//      <td>${a.aadhar}</td>
+//      <td>${a.gender}</td>
+//      <td>${a.childName}</td>
+//      <td>${a.childBirthProofUrl}</td>
+//      <td>${a.birthDate}</td>
+//      <td>${a.birthPlace}</td>
+//      <td>${a.parentsBirthTimeAddress}</td>
+//      <td>${a.fatherName}</td>
+//      <td>${a.motherName}</td>
+//      <td>${a.fatherAadhar}</td>
+//      <td>${a.fatherAadharUrl}</td>
+//      <td>${a.motherAadhar}</td>
+//      <td>${a.motherAadharUrl}</td>
+//      <td>${a.husbandName}</td>
+//      <td>${a.wifeName}</td>
+//      <td>${a.marriageDate}</td>
+//      <td>${a.marriageYear}</td>
+//      <td>${a.deceasedName}</td>
+//      <td>${a.deathDate}</td>
+//      <td>${a.deathPlace}</td>
+//      <td>${a.deceasedPermenantAddress}</td>
+//      <td>${a.nocDescription}</td>
+//      <td>${a.rtiTitleDescription}</td>
+//      <td>${a.rtibplNumber}</td>
+//      <td>${a.rtiTimePeriod}</td>
+//      <td>${a.milakatNumber}</td>
+//      <td>${a.milakatArea}</td>
+//      <td>${a.constructionArea}</td>
   
-     <td>${a.milakatGat}</td>
-     <td>${a.milakatBharna}</td>
-     <td>${formatDateTime(a.submittedDate)}</td>
-     `;
+//      <td>${a.milakatGat}</td>
+//      <td>${a.milakatBharna}</td>
+//      <td>${formatDateTime(a.submittedDate)}</td>
+//      `;
 
-     const actionCell = tr.firstElementChild;
-     actionCell.style.display = 'inline-flex';
-     const deleteBtn = document.createElement('button');
-     deleteBtn.textContent='Delete';
-     deleteBtn.className ='btn btn-sm btn-danger';
-     deleteBtn.style.marginLeft = '8px';
+//      const actionCell = tr.firstElementChild;
+//      actionCell.style.display = 'inline-flex';
+//      const deleteBtn = document.createElement('button');
+//      deleteBtn.textContent='Delete';
+//      deleteBtn.className ='btn btn-sm btn-danger';
+//      deleteBtn.style.marginLeft = '8px';
 
-     const actionBtn = document.createElement('button')
-     actionBtn.textContent = 'Status';
-     actionBtn.className = 'btn btn-sm btn-success';
-     actionBtn.style.marginLeft = '8px';
+//      const actionBtn = document.createElement('button')
+//      actionBtn.textContent = 'Status';
+//      actionBtn.className = 'btn btn-sm btn-success';
+//      actionBtn.style.marginLeft = '8px';
 
-     if (a.status === 'Completed')
-     {
-      actionBtn.disabled = true;
-      actionBtn.classList.add = 'disabled';
-     }
+//      if (a.status === 'Completed')
+//      {
+//       actionBtn.disabled = true;
+//       actionBtn.classList.add = 'disabled';
+//      }
 
-      deleteBtn.addEventListener('click', () => {
-       if(confirm(`Are you sure you want to delete the Application Number ${a.id}?`));{
-          const apiPath = window.APP_CONFIG.apiBaseUrl;
-           fetch(apiPath + `SongirApplication/${a.id}`,{
-              method:'DELETE',
-              headers: {'Autorization' : 'Bearer' + token}
-          })
-          .then(resp => {
-            if(!resp.ok)throw new error('Delete Opereaion Failed!');
-            alert(`Application number ${a.id} Deleted Successfully`);
-            loadApplications();
-          }) 
+//       deleteBtn.addEventListener('click', () => {
+//        if(confirm(`Are you sure you want to delete the Application Number ${a.id}?`));{
+//           const apiPath = window.APP_CONFIG.apiBaseUrl;
+//            fetch(apiPath + `SongirApplication/${a.id}`,{
+//               method:'DELETE',
+//               headers: {'Autorization' : 'Bearer' + token}
+//           })
+//           .then(resp => {
+//             if(!resp.ok)throw new error('Delete Opereaion Failed!');
+//             alert(`Application number ${a.id} Deleted Successfully`);
+//             loadApplications();
+//           }) 
 
-        }
-      });
+//         }
+//       });
 
-      actionBtn.addEventListener('click', async () => {
-        if(confirm(`Are you sure you want to change the status of Application No. ${a.id}?`)){
-          const apiPath = window.APP_CONFIG.apiBaseUrl;
-         const res =  await fetch(apiPath + `SongirApplication/status/${a.id}`,{
-          method : 'patch',
-          headers: {'Authorization' : 'Bearer' + token}          
-         });
-         if (res.ok){
-          alert('Status Changed Successfully');
-          loadApplications();
-         }
-         else{
-          alert('some error has occur in the process, Failed!');
-         }
+//       actionBtn.addEventListener('click', async () => {
+//         if(confirm(`Are you sure you want to change the status of Application No. ${a.id}?`)){
+//           const apiPath = window.APP_CONFIG.apiBaseUrl;
+//          const res =  await fetch(apiPath + `SongirApplication/status/${a.id}`,{
+//           method : 'patch',
+//           headers: {'Authorization' : 'Bearer' + token}          
+//          });
+//          if (res.ok){
+//           alert('Status Changed Successfully');
+//           loadApplications();
+//          }
+//          else{
+//           alert('some error has occur in the process, Failed!');
+//          }
         
-        }
-      });
+//         }
+//       });
 
-      actionCell.appendChild(deleteBtn);
-      actionCell.appendChild(actionBtn);
-      tbody.appendChild(tr);      
-    });
-  }
-  catch (err) {
-    tbody.innerHTML = `<tr><td colspan="38">Failed to load Applications.</td></tr> ${console.log(err)}`;
-  }
+//       actionCell.appendChild(deleteBtn);
+//       actionCell.appendChild(actionBtn);
+//       tbody.appendChild(tr);      
+//     });
+//   }
+//   catch (err) {
+//     tbody.innerHTML = `<tr><td colspan="38">Failed to load Applications.</td></tr> ${console.log(err)}`;
+//   }
   
-}
+// }
 
 
 function renderDocumentLink(url, label = "View") {

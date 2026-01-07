@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="images/GramLogo.png" type="image/x-icon">
+    <link rel="icon" href="images/GramLogo.png" type="image/x-icon">
     <title>ग्रामपंचायत सोनगीर</title>
    
   <!--Bootstrap -->
@@ -94,7 +94,78 @@
       padding: 6px;
     }
 
+    .btn-close{
+        /* padding: 8px;
+        background-color: rgb(255, 0, 0); */
+        /* color: white; */
+    }
+
+    /* --------------------------------- कार्यकारी अंदळ/समिती- Start  --------------------------------- */
     
+.container {
+    display: flex;
+    height: 100vh;
+    /* vertical-align: center; */
+    
+}
+
+/* .content {
+    display: flex;
+    /* flex: 1; 
+    padding: 20px;
+    background: #ffffff;
+    border: 20px solid rgb(135, 206, 202);
+    align-items: center;
+    flex-direction: column;
+    width: 950px;
+    margin-left: 150px;
+}
+ */
+
+ .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 950px;
+    max-width: 100%;
+
+    margin: 40px auto;   /* ⬅️ center horizontally + top spacing */
+
+    padding: 20px;
+    background: #ffffff;
+    border: 20px solid rgb(135, 206, 202);
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    color: #0d6efd;
+    vertical-align: center;
+    font-weight: 700;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f1f3f5;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+    
+@media (max-width<768px) {
+  .content{
+    margin-left: 0;
+  }
+}
+    /* --------------------------------- कार्यकारी अंदळ/समिती-End  --------------------------------- */
     </style>
 
     <meta name="google" content="notranslate">
@@ -127,7 +198,7 @@
     </div>
   </div>
 
-   <header class="site-header" style="display: flex; align-items: center;justify-content: center;">
+    <header class="site-header" style="display: flex; align-items: center;justify-content: center;">
       <div class="logo">
          <img src="images/maharashtraLogo_1.png" style="height: 150px; width: 150px; margin-right: 25px;" alt="Maharashtra Shasan">
       </div>
@@ -137,7 +208,7 @@
       </div>
     </header>
 
- 
+   
     <nav class="navbar">
         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
         <ul id="main-nav">
@@ -148,9 +219,9 @@
                     👥 संघटना <span class="arrow"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="active"><a href="organisation.html">पदाधिकारी</a></li>
+                    <li><a href="organisation.html">पदाधिकारी</a></li>
                     <li><a href="Samiti.html">कार्यकारी मंडळ व विभाग</a></li>
-                    <li><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
+                    <li class="active"><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
                 </ul>
             </li>
             <li><a href="services.html">🤝 सेवा</a></li>
@@ -162,149 +233,47 @@
         </ul>    
       </nav>
 
-    <div class="section-header-organisation">
-    <h2>पदाधिकारी</h2>
-    </div>
 
-    <!-- <div class="filter-menu">
-        <button class="filter-btn active" data-filter="all">सर्व</button>
-        <button class="filter-btn" data-filter="executive">ग्रा. पं. कार्यकारिणी</button>
-        <button class="filter-btn" data-filter="employee">ग्रा. पं. कर्मचारी</button>
-    </div> -->
+      <section id="application">                                    
+                    <div class="container">
+                        <div class="content">
+                            <div class="strip">                                
+                                 <h2 id="samitiTitle" data-aos="fade-right"><strong>ग्रामस्तरीय कर्मचारी</strong></h2>
+                            </div>
+
+                            <table data-aos="fade-left">
+                                <thead>
+                                    <tr>
+                                        <th>अ.क्र.</th>
+                                        <th>नाव</th>
+                                        <th>पदनाम</th>
+                                        <th>मो. नं</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="samitiTableBody">
+                                   <tr>
+                                        <td>1</td>
+                                        <td>सौ. सुनीता हेमंत भरणे</td>
+                                        <td>सदस्य</td>
+                                        <td>9049030788</td>
+                                    </tr>
+                                     <tr>
+                                        <td>2</td>
+                                        <td>सौ. माधुरी सुभाष आहेर</td>
+                                        <td>सदस्य</td>
+                                        <td>9403643229</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+        </section>
 
 
-    <section data-aos="fade-up" class="members-grid">
-        <div class="member-card">
-            <img src="images/adminlogosquare.jpg" alt="श्री. मेघःशाम हिरकणी रोहिदास बोरसे">
-            <div class="overlay">
-            <h3>श्री. मेघःशाम हिरकणी रोहिदास बोरसे</h3>
-            <span class="badge">ग्रामपंचायत अधिकारी</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/lakhan_bhika_thelari.jpeg" alt="श्री लखन भिका ठेलारी">
-            <div class="overlay">
-            <h3>श्री लखन भिका ठेलारी</h3>
-            <span class="badge">प्रभारी सरपंच</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Pintu_Motiram_Bhil.jpeg" alt="श्री पिंटू मोतीराम भिल">
-            <div class="overlay">
-            <h3>श्री पिंटू मोतीराम भिल</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Anita_Rajendra_Jadhav.jpeg" alt="सौ.अनिता राजेंद्र जाधव">
-            <div class="overlay">
-            <h3>सौ.अनिता राजेंद्र जाधव</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Suman_nimba_mali.jpeg" alt="श्रीमती सुमनबाई निंबा माळी">
-            <div class="overlay">
-            <h3>श्रीमती सुमनबाई निंबा माळी</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Kalyani_mohan_saundane.jpeg" alt="सौ. कल्याणी मोहन सैंदाणे">
-            <div class="overlay">
-            <h3>सौ. कल्याणी मोहन सैंदाणे</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Vijubai_badgujar.jpeg" alt="श्रीमती विजुबाई रमेश बडगुजर">
-            <div class="overlay">
-            <h3>श्रीमती विजुबाई रमेश बडगुजर</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Rukhsana_bi_she_altaf_kureshi.jpeg" alt="रुखसानाबी शे. अल्ताफ कुरेशी">
-            <div class="overlay">
-            <h3>सौ. रुखसानाबी शे. अल्ताफ कुरेशी</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Devkanya_Kedareshwar_more.jpeg" alt="सौ.देवकन्या केदारेश्वर मोरे">
-            <div class="overlay">
-            <h3>सौ.देवकन्या केदारेश्वर मोरे</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-        <div class="member-card">
-            <img src="images/Places/Vishal_Dilip_Tambat.jpeg" alt="श्री. विशाल दिलीप तांबट">
-            <div class="overlay">
-            <h3>श्री. विशाल दिलीप तांबट</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/Places/Rahul_sudhakar_deshmukh.jpeg" alt="श्री. राहूल सुधाकर देशमुख">
-            <div class="overlay">
-            <h3>श्री. राहूल सुधाकर देशमुख</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/adminlogosquare.jpg" alt="श्री. अविनाश झेंडू महाजन">
-            <div class="overlay">
-            <h3>श्री. अविनाश झेंडू महाजन</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/adminlogofemale.png" alt="श्रीमती जैबूनिस्सा बानो शमसोद्दिन मुसलमान">
-            <div class="overlay">
-            <h3>श्रीमती जैबूनिस्सा बानो शमसोद्दिन मुसलमान</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/adminlogosquare.jpg" alt="श्री आरीफ खान अ. रऊफ खान मनियार">
-            <div class="overlay">
-            <h3>श्री. आरीफ खान अ. रऊफ खान मनियार</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/Places/shafiyoddin_khan.jpeg" alt="शाफियोद्दिन हुसेन खा पठाण ">
-            <div class="overlay">
-            <h3>श्री. शाफियोद्दिन हुसेन खान पठाण</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/Places/sheikh_irfan_kureshi.jpeg" alt="शेख इरफान शेख इक्बाल कुरेशी">
-            <div class="overlay">
-            <h3>श्री. शेख इरफान शेख इक्बाल कुरेशी</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-        <div class="member-card">
-            <img src="images/Places/savita_murlidhar_patil.jpeg" alt="सविता मुरलीधर पाटील">
-            <div class="overlay">
-            <h3>सौ. सविता मुरलीधर पाटील</h3>
-            <span class="badge">सदस्य</span>
-            </div>
-        </div>
-
-    </section>
-
+    
     
     
       
@@ -330,8 +299,6 @@
               <input type="number" class="form-control" id="complainterNumber" placeholder="आपला मोबाईल नंबर भरा" required>
             </div>
 
-
-
             <div class="mb-3">
               <label class="form-label">तक्रार / सूचना निवडा :</label>
               <select class="form-control" id="reasonDropdown">
@@ -356,8 +323,15 @@
     </div>
   </div>
 
+    
+    
+ 
+ 
+    
+  
 
-       <div id="logos"> 
+
+        <div id="logos"> 
         <div data-aos="fade-up" class="govtlogos">
           <img class="govlogo" src="images/apleSarkar.png" alt="Aple Sarkar">        
           <img class="govlogo" src="images/atalBujal.png" alt="Atal Bhujal">
@@ -445,11 +419,18 @@
   </footer>
 
 
-      <script src="config.js"></script>
-      <script src="script.js"></script>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+
+      AOS.init({
+        duration: 1000,   // Animation duration (ms)
+        once: true        // Run animation only once
+    });
+
+
 // document.addEventListener('DOMContentLoaded', () => {
 //   const toggle = document.querySelector('.mobile-nav-toggle');
 //   const menu = document.querySelector('nav ul#main-nav');
@@ -499,13 +480,76 @@
 //     }
 //   });
 // });
+
+
+
+// const samitiData = {
+//     karyakari: {
+//         title: "कार्यकारी फलक",
+//         members: [
+//             { name: "सौ. सुनीता हेमंत भरणे", role: "सरपंच", mobile: "9423452275" },
+//             { name: "सौ. माधुरी सुभाष आहेर", role: "उपसरपंच", mobile: "9403643229" }
+//         ]
+//     },
+//     pani: {
+//         title: "पाणीपुरवठा समिती",
+//         members: [
+//             { name: "सौ. बबवाई भिमराव माळी", role: "सदस्य", mobile: "9049030788" },
+//             { name: "सौ. आशा रवींद्र भरणे", role: "सदस्य", mobile: "9158327275" }
+//         ]
+//     },
+//     bandhkam: {
+//         title: "बांधकाम समिती",
+//         members: [
+//             { name: "सौ. रेखा संजय पाटील", role: "सदस्य", mobile: "9823421780" }
+//         ]
+//     },
+//     aarogya: {
+//         title: "आरोग्य समिती",
+//         members: [
+//             { name: "सौ. सविता हिरेश पारिक", role: "सदस्य", mobile: "9922232121" }
+//         ]
+//     },
+//     shikshan: {
+//         title: "शैक्षणिक संस्था",
+//         members: [
+//             { name: "सौ. ममता मनोहर पाटील", role: "सदस्य", mobile: "9834422065" }
+//         ]
+//     }
+// };
+
+// function loadSamiti(key) {
+//     // Update title
+//     document.getElementById("samitiTitle").innerText = samitiData[key].title;
+
+//     // Update table
+//     const tbody = document.getElementById("samitiTableBody");
+//     tbody.innerHTML = "";
+
+//     samitiData[key].members.forEach((m, index) => {
+//         tbody.innerHTML += `
+//             <tr>
+//                 <td>${index + 1}</td>
+//                 <td>${m.name}</td>
+//                 <td>${m.role}</td>
+//                 <td>${m.mobile}</td>
+//             </tr>
+//         `;
+//     });
+
+//     // Active button handling
+//     document.querySelectorAll(".samiti-btn").forEach(btn => btn.classList.remove("active"));
+//     event.target.classList.add("active");
+// }
+
+// // Load default samiti
+// loadSamiti('karyakari');
+
+
+
+
 </script>
 
-    <script>
-    AOS.init({
-        duration: 1000,   // Animation duration (ms)
-        once: true        // Run animation only once
-    });
-    </script>
+   
 </body>
 </html>

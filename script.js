@@ -76,7 +76,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// -----------------------------------Mobile Navbar Toggle and organization dropdown Functionality---------------------------------------
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.mobile-nav-toggle');
+  const menu = document.querySelector('#main-nav');
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdown = document.querySelector('.dropdown');
+
+  if (!hamburger || !menu || !dropdownToggle || !dropdown) return;
+
+  /* ========== HAMBURGER MENU ========== */
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    const isOpen = menu.classList.toggle('show');
+
+    // ✅ THIS IS THE CORRECT PLACE
+    hamburger.textContent = isOpen ? '✖' : '☰';
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* ========== DROPDOWN TOGGLE ========== */
+  dropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const isOpen = dropdown.classList.contains('open');
+
+    // toggle on same click
+    dropdown.classList.toggle('open', !isOpen);
+    dropdownToggle.setAttribute('aria-expanded', !isOpen);
+  });
+
+  /* ========== CLICK OUTSIDE CLOSES ALL ========== */
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('nav')) return;
+
+    menu.classList.remove('show');
+    hamburger.textContent = '☰';
+    hamburger.setAttribute('aria-expanded', 'false');
+
+    dropdown.classList.remove('open');
+    dropdownToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+
+
+// ---------------------------------------------------End-------------------------------------------
 
 
 

@@ -169,6 +169,13 @@
   font-size: x-large;
 }
 
+
+
+.custom-table tbody tr a{
+  /* text-decoration: none; */
+  color: #000;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .table-title {
@@ -229,29 +236,38 @@
       </div>
     </header>
 
+ 
     <nav class="navbar">
         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
-
         <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
             <li><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
-            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">
+                    👥 संघटना <span class="arrow"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="organisation.html">पदाधिकारी</a></li>
+                    <li><a href="Samiti.html">कार्यकारी मंडळ व विभाग</a></li>
+                    <li><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
+                </ul>
+            </li>           
             <li><a href="services.html">🤝 सेवा</a></li>
             <li><a href="schemes.html">📍 योजना</a></li>
             <li><a href="gallery.html">🖼️ गॅलरी</a></li>
-            <li class="active"><a href="#">📞 संपर्क</a></li>
-            <li><a href="apply.html">📝 अर्ज</a></li>
-             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
-            
+            <li  class="active"><a href="contact.html">📞 संपर्क</a></li>
+            <!-- <li><a href="apply.html">📝 अर्ज</a></li> -->
+            <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>          
         </ul>    
-    </nav>
+      </nav>
+
 
     <section class="welcome-section-about" style="display: flex; flex-direction: column;">
         <div data-aos="fade-right" class="info-card">
             <h2 class="section-title-about">आमच्याशी संपर्क करा</h2>
                     <div class="contact-info-contact">
                     <p><strong>पत्ता :</strong>  सोनगीर पोस्ट, ता. धुळे (धुळे) . </p>
-                    <p><strong>फोन :</strong> +91-74209888933</p>         
+                    <p><strong>फोन :</strong> <a href="tel:74209888933">+91-74209888933</a></p>         
                     <p><strong>ईमेल :</strong>  dhule.go.songir@gmail.com</p> 
                     <p><strong>कार्यालय वेळ :</strong> सकाळी १०:३० ते सायंकाळी ५:३० वाजे पर्यंत.</p>
                     </div>
@@ -290,25 +306,25 @@
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody style="text-decoration: none;">
                 <tr>
                   <td class="left-col">महिला हेल्पलाईन</td>
-                  <td class="right-col">१०९१</td>
+                  <td class="right-col"><a  href="tel:1091">१०९१</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">कौटुंबिक हिंसाचार मदत</td>
-                  <td class="right-col">१८१</td>
+                  <td class="right-col"><a  href="tel:181">१८१</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">चाइल्ड हेल्पलाईन (मुलांसाठी)</td>
-                  <td class="right-col">१०९८</td>
+                  <td class="right-col"><a  href="tel:1098">१०९८</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">बेपत्ता मुले आणि महिला</td>
-                  <td class="right-col">१०९४</td>
+                  <td class="right-col"><a  href="tel:1094">१०९४</a></td>
                 </tr>
               </tbody>
             </table>
@@ -332,27 +348,27 @@
               <tbody>
                 <tr>
                   <td class="left-col">राष्ट्रीय आपत्कालीन क्रमांक</td>
-                  <td class="right-col">११२</td>
+                  <td class="right-col"><a  href="tel:112">११२</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">पोलीस</td>
-                  <td class="right-col">१००</td>
+                  <td class="right-col"><a  href="tel:100">१००</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">अग्निशमन दल (Fire)</td>
-                  <td class="right-col">१०१</td>
+                  <td class="right-col"><a  href="tel:101">१०१</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">रुग्णवाहिका (Ambulance)</td>
-                  <td class="right-col">१०२ / १०८</td>
+                  <td class="right-col"><a  href="tel:102">१०२</a> / <a  href="tel:108">१०८</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">आपत्ती व्यवस्थापन (Disaster Management)</td>
-                  <td class="right-col">१०७७</td>
+                  <td class="right-col"><a  href="tel:1077">१०७७</a></td>
                 </tr>
               </tbody>
             </table>
@@ -376,52 +392,52 @@
               <tbody>
                 <tr>
                   <td class="left-col">सायबर क्राईम (Cyber Crime)</td>
-                  <td class="right-col">१९३०</td>
+                  <td class="right-col"><a  href="tel:1930">१९३०</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">वैद्यकीय सल्ला (Medical Advice)</td>
-                  <td class="right-col">१०४</td>
+                  <td class="right-col"><a  href="tel:104">१०४</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">शेतकरी कॉल सेंटर (Kisan Call Centre)</td>
-                  <td class="right-col">१५५१</td>
+                  <td class="right-col"><a  href="tel:1551">१५५१</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">मतदार हेल्पलाईन (Voter Helpline)</td>
-                  <td class="right-col">१९५०</td>
+                  <td class="right-col"><a  href="tel:1950">१९५०</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">रेल्वे चौकशी</td>
-                  <td class="right-col">१३९</td>
+                  <td class="right-col"><a  href="tel:139">१३९</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">रेल्वे अपघात आपत्कालीन सेवा</td>
-                  <td class="right-col">१०७२</td>
+                  <td class="right-col"><a  href="tel:1072">१०७२</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">एलपीजी (LPG) गॅस गळती</td>
-                  <td class="right-col">१९०६</td>
+                  <td class="right-col"><a  href="tel:1906">१९०६</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">ज्येष्ठ नागरिक सुरक्षा</td>
-                  <td class="right-col">१०९१ / १२९१</td>
+                  <td class="right-col"><a  href="tel:1091">१०९१</a> / <a  href="tel:1291">१२९१</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">मानसिक आरोग्य (Tele-MANAS)</td>
-                  <td class="right-col">१४४१६</td>
+                  <td class="right-col"><a  href="tel:14416">१४४१६</a></td>
                 </tr>
 
                 <tr>
                   <td class="left-col">रेशन (PDS) हेल्पलाईन</td>
-                  <td class="right-col">१८००-२२-४९५०</td>
+                  <td class="right-col"><a  href="tel:1800224950">१८००-२२-४९५०</a></td>
                 </tr>
               </tbody>
             </table>
@@ -576,55 +592,55 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const menu = document.querySelector('nav ul#main-nav');
-  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const toggle = document.querySelector('.mobile-nav-toggle');
+//   const menu = document.querySelector('nav ul#main-nav');
+//   const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
 
-  // Guard: if elements are missing (e.g. different page), exit gracefully
-  if (!toggle || !menu) return;
+//   // Guard: if elements are missing (e.g. different page), exit gracefully
+//   if (!toggle || !menu) return;
 
-  // Toggle menu on hamburger click
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('show');       // add/remove .show
-    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
-    // Optional: change icon from ☰ to ✖
-    toggle.textContent = isOpen ? '✖' : '☰';
-  });
+//   // Toggle menu on hamburger click
+//   toggle.addEventListener('click', () => {
+//     const isOpen = menu.classList.toggle('show');       // add/remove .show
+//     toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+//     // Optional: change icon from ☰ to ✖
+//     toggle.textContent = isOpen ? '✖' : '☰';
+//   });
 
-  // Close menu when any link clicked (for SPA behaviour or anchor links)
-  if (menuLinks.length) {
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
-    });
-  }
-
-
+//   // Close menu when any link clicked (for SPA behaviour or anchor links)
+//   if (menuLinks.length) {
+//     menuLinks.forEach(link => {
+//       link.addEventListener('click', () => {
+//         menu.classList.remove('show');
+//         toggle.setAttribute('aria-expanded', 'false');
+//         toggle.textContent = '☰';
+//       });
+//     });
+//   }
 
 
 
-  // Optional: close menu if user taps/clicks outside the nav when open
-  document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('show')) return;
-    if (!e.target.closest('nav')) {
-      menu.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-    }
-  });
 
-  // Optional: allow keyboard toggle via Enter/Space when focused
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle.click();
-    }
-  });
-});
+
+//   // Optional: close menu if user taps/clicks outside the nav when open
+//   document.addEventListener('click', (e) => {
+//     if (!menu.classList.contains('show')) return;
+//     if (!e.target.closest('nav')) {
+//       menu.classList.remove('show');
+//       toggle.setAttribute('aria-expanded', 'false');
+//       toggle.textContent = '☰';
+//     }
+//   });
+
+//   // Optional: allow keyboard toggle via Enter/Space when focused
+//   toggle.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter' || e.key === ' ') {
+//       e.preventDefault();
+//       toggle.click();
+//     }
+//   });
+// });
 </script>
 
     <script>

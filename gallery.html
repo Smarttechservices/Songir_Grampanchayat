@@ -366,23 +366,30 @@
       </div>
     </header>
 
+ 
     <nav class="navbar">
-       <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
+        <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
         <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
             <li><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
-            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">
+                    👥 संघटना <span class="arrow"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="organisation.html">पदाधिकारी</a></li>
+                    <li><a href="Samiti.html">कार्यकारी मंडळ व विभाग</a></li>
+                    <li><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
+                </ul>
+            </li>           
             <li><a href="services.html">🤝 सेवा</a></li>
             <li><a href="schemes.html">📍 योजना</a></li>
-            <li  class="active"><a href="#">🖼️ गॅलरी</a></li>
+            <li  class="active"><a href="gallery.html">🖼️ गॅलरी</a></li>
             <li><a href="contact.html">📞 संपर्क</a></li>
-            <li><a href="apply.html">📝 अर्ज</a></li>
-             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
-            
-        </ul>
-
-       
-    </nav>
+            <!-- <li><a href="apply.html">📝 अर्ज</a></li> -->
+            <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>          
+        </ul>    
+      </nav>
 
 
   
@@ -615,55 +622,55 @@
 
 
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const menu = document.querySelector('nav ul#main-nav');
-  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const toggle = document.querySelector('.mobile-nav-toggle');
+//   const menu = document.querySelector('nav ul#main-nav');
+//   const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
 
-  // Guard: if elements are missing (e.g. different page), exit gracefully
-  if (!toggle || !menu) return;
+//   // Guard: if elements are missing (e.g. different page), exit gracefully
+//   if (!toggle || !menu) return;
 
-  // Toggle menu on hamburger click
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('show');       // add/remove .show
-    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
-    // Optional: change icon from ☰ to ✖
-    toggle.textContent = isOpen ? '✖' : '☰';
-  });
+//   // Toggle menu on hamburger click
+//   toggle.addEventListener('click', () => {
+//     const isOpen = menu.classList.toggle('show');       // add/remove .show
+//     toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+//     // Optional: change icon from ☰ to ✖
+//     toggle.textContent = isOpen ? '✖' : '☰';
+//   });
 
-  // Close menu when any link clicked (for SPA behaviour or anchor links)
-  if (menuLinks.length) {
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
-    });
-  }
-
-
+//   // Close menu when any link clicked (for SPA behaviour or anchor links)
+//   if (menuLinks.length) {
+//     menuLinks.forEach(link => {
+//       link.addEventListener('click', () => {
+//         menu.classList.remove('show');
+//         toggle.setAttribute('aria-expanded', 'false');
+//         toggle.textContent = '☰';
+//       });
+//     });
+//   }
 
 
 
-  // Optional: close menu if user taps/clicks outside the nav when open
-  document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('show')) return;
-    if (!e.target.closest('nav')) {
-      menu.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-    }
-  });
 
-  // Optional: allow keyboard toggle via Enter/Space when focused
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle.click();
-    }
-  });
-});
+
+//   // Optional: close menu if user taps/clicks outside the nav when open
+//   document.addEventListener('click', (e) => {
+//     if (!menu.classList.contains('show')) return;
+//     if (!e.target.closest('nav')) {
+//       menu.classList.remove('show');
+//       toggle.setAttribute('aria-expanded', 'false');
+//       toggle.textContent = '☰';
+//     }
+//   });
+
+//   // Optional: allow keyboard toggle via Enter/Space when focused
+//   toggle.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter' || e.key === ' ') {
+//       e.preventDefault();
+//       toggle.click();
+//     }
+//   });
+// });
 </script>
 
 

@@ -241,18 +241,162 @@
     height: 200px;
   }
 }
-
-
-
-
-
-
 /*----------------------------------------------------------------------------------------------------------*/
 
-
-
-
+   /* --------------------------------- कार्यकारी मंडळ/समिती- Start  --------------------------------- */
     
+.container {
+    display: flex;
+    height: 175vh;
+    /* vertical-align: center; */
+    flex-direction: column;
+    
+}
+
+
+ .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 950px;
+    max-width: 100%;
+
+    margin: 40px auto;   /* ⬅️ center horizontally + top spacing */
+
+    padding: 20px;
+    background: #ffffff;
+    border: 20px solid rgb(135, 206, 202);
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    color: #0d6efd;
+    vertical-align: center;
+    font-weight: 700;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f1f3f5;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+    
+@media (max-width:768px) {
+  .content{
+    margin-left: 0;
+  }
+}
+
+
+/*------------------Table Pagination------------------------ */
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pagination button {
+    margin: 3px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}    
+/*------------------END-Table Pagination------------------------ */
+
+#PriceSectionTitle
+{
+  font-size: 28px;
+}
+
+/* ================= MOBILE VIEW FOR TABLES ================= */
+@media (max-width:768px) {
+
+    .container {
+        height: auto;
+    }
+
+    .content {
+        width: 100%;
+        padding: 10px;
+        border-width: 8px;
+    }
+
+    table {
+        border: 0;
+    }
+
+    thead {
+        display: none; /* hide headers */
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background: #f9f9f9;
+    }
+
+    td {
+        border: none;
+        padding: 6px 8px;
+        position: relative;
+        font-size: 14px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #0d6efd;
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    /* Headings */
+    .content h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Pagination buttons */
+    .pagination button {
+        padding: 5px 9px;
+        font-size: 13px;
+    }
+}
+/* ================= END MOBILE TABLE ================= */
+
+
     </style>
 
     <meta name="google" content="notranslate">
@@ -306,23 +450,29 @@
     </header>
 
     <nav class="navbar">
-         <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
-
+        <div class="mobile-nav-toggle" aria-expanded="false">☰</div>
         <ul id="main-nav">
             <li><a href="index.html">🏠 मुख्यपृष्ठ</a></li>
-            <li class="active"><a href="#">ℹ️ आमच्याबद्दल</a></li>
-            <li><a href="organisation.html">👥 संघटना</a></li>
+            <li class="active"><a href="about.html">ℹ️ आमच्याबद्दल</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle">
+                    👥 संघटना <span class="arrow"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="organisation.html">पदाधिकारी</a></li>
+                    <li><a href="Samiti.html">कार्यकारी मंडळ व विभाग</a></li>
+                    <li><a href="GpEmployee.html">ग्रामस्तरीय कर्मचारी</a></li>
+                </ul>
+            </li>           
             <li><a href="services.html">🤝 सेवा</a></li>
             <li><a href="schemes.html">📍 योजना</a></li>
             <li><a href="gallery.html">🖼️ गॅलरी</a></li>
             <li><a href="contact.html">📞 संपर्क</a></li>
-            <li><a href="apply.html">📝 अर्ज</a></li>
-             <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>  
-            
-        </ul>
+            <!-- <li><a href="apply.html">📝 अर्ज</a></li> -->
+            <li><a href="#complaint" data-bs-toggle="modal" data-bs-target="#complaintModal">📢 तक्रार</a></li>          
+        </ul>    
+      </nav>
 
-       
-    </nav>
 
     <section class="welcome-section-about">
         <div data-aos="fade-right" class="info-card">
@@ -350,6 +500,321 @@
 
         
     </section>
+
+
+      <section id="SirpanchSection ">                                    
+                    <div class="container">
+                        <div class="content">
+                            <div class="strip">                                
+                                 <h2 id="SirpanchSectionTitle" data-aos="fade-right"><strong>सोनगीर ग्रामपंचायत - भूषविलेले सरपंच पद</strong></h2>
+                            </div>
+
+                            <table data-aos="fade-left">
+                                <thead>
+                                    <tr>
+                                        <th>अ.क्र.</th>
+                                        <th>नाव</th>
+                                        <th>तारीख(पासून)</th>                                        
+                                        <th>तारीख(पर्यंत)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="SirpanchSectionTableBody">
+                                   <tr>
+                                        <td>1</td>
+                                        <td>श्री घन:श्याम भाईदास पाटील </td>
+                                        <td>०१/०२/१९२४</td>
+                                        <td>०७/०५/१९३६</td>
+                                    </tr>
+                                     <tr>
+                                        <td>2</td>
+                                        <td>श्री सुकलाल शामलाल पाटील </td>
+                                        <td>०८/०५/१९३६</td>
+                                        <td>०९/०५/१९४१</td>
+                                    </tr>
+                                        <td>3</td>
+                                        <td>श्री घन:श्याम भाईदास पाटील </td>
+                                        <td>१०/०५/१९४१</td>
+                                        <td>१०/०८/१९४५</td>
+                                    </tr>
+                                     <tr>
+                                        <td>4</td>
+                                        <td>श्री सुकलाल शामलाल पाटील</td>
+                                        <td>११/०८/१९४५</td>
+                                        <td>३०/०४/१९५०</td>
+                                    </tr>
+                                      <td>5</td>
+                                        <td>श्री विठ्ठल जिवन पाटील</td>
+                                        <td>०१/०५/१९५०</td>
+                                        <td>२९/०९/१९५३</td>
+                                    </tr>
+                                     <tr>
+                                        <td>6</td>
+                                        <td>श्री भानुदास बाळकृष्ण जोशी</td>
+                                        <td>३०/०९/१९५३</td>
+                                        <td>०८/०७/१९६२</td>
+                                    </tr>
+                                      <td>7</td>
+                                        <td>श्री लक्ष्मण खेमचंद पाटील</td>
+                                        <td>०९/०७/१९६२</td>
+                                        <td>०५/०५/१९६७</td>
+                                    </tr>
+                                     <tr>
+                                        <td>8</td>
+                                        <td>श्री विठ्ठल जिवन पाटील</td>
+                                        <td>०६/०५/१९६७</td>
+                                        <td>०७/०८/१९७१</td>
+                                    </tr>
+                                      <td>9</td>
+                                        <td>श्री श्रीरंग सुकलाल पाटील</td>
+                                        <td>०८/०८/१९७१</td>
+                                        <td>१९/१०/१९७६</td>
+                                    </tr>
+                                     <tr>
+                                        <td>10</td>
+                                        <td>श्री. गोपाळराव विश्वनाथ देशपांडे - प्रभारी</td>
+                                        <td>२४/११/१९७६</td>
+                                        <td>०७/१२/१९७७</td>
+                                    </tr>
+                                      <td>11</td>
+                                        <td>श्री. लक्ष्मण खेमचंद पाटील - प्रभारी </td>
+                                        <td>०८/१२/१९७७</td>
+                                        <td>०४/०६/१९७८</td>
+                                    </tr>
+                                     <tr>
+                                        <td>12</td>
+                                        <td>श्री. रमेश विठ्ठलदास पारेख</td>
+                                        <td>०५/०६/१९७८</td>
+                                        <td>२४/०४/१९८४</td>
+                                    </tr>  
+                                        <td>13</td>
+                                        <td>श्री श्रीरंग सुकलाल पाटील</td>
+                                        <td>२५/०४/१९८४</td>
+                                        <td>२०/०७/१९८९</td>
+                                    </tr>
+                                     <tr>
+                                        <td>14</td>
+                                        <td>श्री. सत्तारखा हाजी नामदारखा पठाण</td>
+                                        <td>२१/०७/१९८९</td>
+                                        <td>१०/१२/१९९०</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>श्री. आधार महादु माळी</td>
+                                        <td>११/१२/१९९०</td>
+                                        <td>०५/०८/१९९४</td>
+                                    </tr>
+                                     <tr>
+                                        <td>16</td>
+                                        <td>श्री. आधार महादु माळी - प्रशासक</td>
+                                        <td>०६/०८/१९९४</td>
+                                        <td>२७/०८/१९९५</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>दंगल वामन धनगर</td>
+                                        <td>२८/०८/१९९५</td>
+                                        <td>२२/०८/२०००</td>
+                                    </tr>
+                                     <tr>
+                                        <td>18</td>
+                                        <td>श्री. वाल्मीक दामु वाणी</td>
+                                        <td>२३/०८/२०००</td>
+                                        <td>१३/०८/२००१</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>श्री. केदारेश्वर बाबुराव मोरे - प्रभारी </td>
+                                        <td>१3/०८/२००१</td>
+                                        <td>१५/१०/२००१</td>
+                                    </tr>
+                                     <tr>
+                                        <td>20</td>
+                                        <td>श्री. वाल्मीक दामु वाणी</td>
+                                        <td>१५/१०/२००१</td>
+                                        <td>२७/०५/२००२</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td>श्री. केदारेश्वर बाबुराव मोरे - प्रभारी</td>
+                                        <td>२८/०५/२००२</td>
+                                        <td>२९/०९/२००२</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>श्री. मोतीलाल कोतीक माळी</td>
+                                        <td>२९/०९/२००२</td>
+                                        <td>२६/१२/२००३</td>
+                                    </tr>
+                                     <tr>
+                                        <td>23</td>
+                                        <td>श्री. केदारेश्वर बाबुराव मोरे - प्रभारी</td>
+                                        <td>२७/१२/२००३</td>
+                                        <td>२८/०२/२००४</td>
+                                    </tr>
+                                       <tr>
+                                        <td>24</td>
+                                        <td>श्री. शिवनाथ यशवंत कासार</td>
+                                        <td>२८/०२/२००४</td>
+                                        <td>२३/०८/२००५</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>25</td>
+                                        <td>सौ. मिराताई दंगल धनगर</td>
+                                        <td>२३/०८/२००५</td>
+                                        <td>२३/०८/२०१०</td>
+                                    </tr>
+                                     <tr>
+                                        <td>26</td>
+                                        <td>सौ. किशोर मधुकर शुक्ल</td>
+                                        <td>२३/०८/२०१०</td>
+                                        <td>२२/०८/२०१५</td>
+                                    </tr>
+                                      <tr>
+                                        <td>27</td>
+                                        <td>सौ. योगिता अविनाश महाजन</td>
+                                        <td>२२/०८/२०१५</td>
+                                        <td>१७/११/२०१६</td>
+                                    </tr>
+                                       <tr>
+                                        <td>28</td>
+                                        <td>श्री. धनंजय श्रीराम कासार - प्रभारी</td>
+                                        <td>१८/११/२०१६</td>
+                                        <td>३०/०४/२०१७</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29</td>
+                                        <td>सौ. योगिता अविनाश महाजन</td>
+                                        <td>३०/०४/२०१७</td>
+                                        <td>२३/०४/२०१८</td>
+                                    </tr>
+                                     <tr>
+                                        <td>30</td>
+                                        <td>श्री. धनंजय श्रीराम कासार - प्रभारी</td>
+                                        <td>२३/०४/२०१८</td>
+                                        <td>१२/०५/२०२०</td>
+                                    </tr>
+                                       <tr>
+                                        <td>31</td>
+                                        <td>सौ. योगिता अविनाश महाजन</td>
+                                        <td>१२/०५/२०२०</td>
+                                        <td>२२/०८/२०२०</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>32</td>
+                                        <td>श्री. कपिल एन वाघ - प्रशासक</td>
+                                        <td>२३/०८/२०२०</td>
+                                        <td>१५/०२/२०२१</td>
+                                    </tr>
+                                     <tr>
+                                        <td>33</td>
+                                        <td>श्रीमती. रुखमाबाई गोरख ठाकरे</td>
+                                        <td>१६/०२/२०२१</td>
+                                        <td>२७/०६/२०२३</td>
+                                    </tr>                                    
+                                     <tr>
+                                        <td>3४</td>
+                                        <td>सौ. सविता मुरलीधर पाटील</td>
+                                        <td>२८/०६/२०२३</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                         <div id="pagination" class="pagination"></div>
+                        </div>
+
+
+                           <div class="content">
+                            <div class="strip">                                
+                                 <h2 id="PriceSectionTitle" data-aos="fade-right"><strong>उत्कृष्ठ कामाबद्दल पंचायतीस मिळालेली बक्षिसे</strong></h2>
+                            </div>
+
+                            <table data-aos="fade-left">
+                                <thead>
+                                    <tr>
+                                        <th>अ.क्र.</th>
+                                        <th>मिळालेले बक्षिस</th>                               
+                                        <th>तपशील</th>
+                                        <th>सन</th>         
+                                    </tr>
+                                </thead>
+                                <tbody id="priceTableBody">
+                                   <tr>
+                                        <td>1</td>
+                                        <td>रोख रक्कम २०० रुपये</td>
+                                        <td>ग्राम सुधारणेचे पहिले बक्षिस</td>
+                                        <td>१९५२/५३</td>
+                                    </tr>
+                                     <tr>
+                                        <td>2</td>
+                                        <td>रोख रक्कम २०० रुपये</td>
+                                        <td>अधिक झाडे लावण्याचे पहिले बक्षिस</td>
+                                        <td>१९५२/५३</td>
+                                    </tr>
+                                        <td>3</td>
+                                        <td>चांदीचा मोठा कप</td>
+                                        <td>जिल्ह्यातील आदर्श ग्रामपंचायत म्हणून जिल्हा लोकल बोर्ड धुळे तर्फे</td>
+                                        <td>१९५३/५४</td>
+                                    </tr>
+                                     <tr>
+                                        <td>4</td>
+                                        <td>चांदीचा कप</td>
+                                        <td>जिल्ह्यातील आदर्श ग्रामपंचायत म्हणून जिल्हा लोकल बोर्ड धुळे तर्फे</td>
+                                        <td>१९५४/५५</td>
+                                    </tr>
+                                        <td>5</td>
+                                        <td>प्रथम पारितोषिक</td>
+                                        <td>जिल्ह्यातील आदर्श ग्रामपंचायत म्हणून जिल्हा लोकल बोर्ड धुळे तर्फे</td>
+                                        <td>१९५५/५६</td>
+                                    </tr>
+                                     <tr>
+                                        <td>6</td>
+                                        <td>बक्षिस कप</td>
+                                        <td>जिल्ह्यातील आदर्श ग्रामपंचायत म्हणून जिल्हा लोकल बोर्ड धुळे तर्फे</td>
+                                        <td>१९५६/५७</td>
+                                    </tr>
+                                        <td>7</td>
+                                        <td>प्रथम पारितोषिक आणि रोख २५० रु.</td>
+                                        <td>तालुका स्पर्धा - राज्य सरकार</td>
+                                        <td>१९५९/६०</td>
+                                    </tr>
+                                     <tr>
+                                        <td>8</td>
+                                        <td>प्रथम पारितोषिक आणि रोख २५० रु.</td>
+                                        <td>तालुका स्पर्धा - राज्य सरकार</td>
+                                        <td>१९६०/६१</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>द्वितीय पारितोषिक आणि रोख १५००० रु.</td>
+                                        <td>संत गाडगे बाबा आणि संत तुकदोजी महाराज ग्राम स्वच्छता स्पर्धा तालुका पातळी.</td>
+                                        <td>२००२</td>
+                                    </tr>
+                                     <tr>
+                                        <td>10</td>
+                                        <td>प्रथम पारितोषिक आणि रोख २५००० रु.</td>
+                                        <td>संत गाडगे बाबा ग्राम स्वच्छता अंतर्गत स्पर्धा तालुका पातळी.</td>
+                                        <td>३१/०३/२००४</td>
+                                    </tr>
+                                     <tr>
+                                        <td>11</td>
+                                        <td>तृतीय पारितोषिक आणि रोख २००००० रु.</td>
+                                        <td>संत गाडगे बाबा ग्राम स्वच्छता अंतर्गत स्पर्धा जिल्हास्तरीय.</td>
+                                        <td>०१/०५/२००४</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                         <div id="pricePagination" class="pagination"></div>
+                        </div>
+
+                    </div>
+
+        </section>
+
+
+
+
+
 
     <section >
 
@@ -1136,55 +1601,164 @@
      </script> <script src="lightbox-plus-jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const menu = document.querySelector('nav ul#main-nav');
-  const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const toggle = document.querySelector('.mobile-nav-toggle');
+//   const menu = document.querySelector('nav ul#main-nav');
+//   const menuLinks = document.querySelectorAll('nav ul#main-nav li a');
 
-  // Guard: if elements are missing (e.g. different page), exit gracefully
-  if (!toggle || !menu) return;
+//   // Guard: if elements are missing (e.g. different page), exit gracefully
+//   if (!toggle || !menu) return;
 
-  // Toggle menu on hamburger click
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('show');       // add/remove .show
-    toggle.setAttribute('aria-expanded', isOpen);       // accessibility
-    // Optional: change icon from ☰ to ✖
-    toggle.textContent = isOpen ? '✖' : '☰';
-  });
+//   // Toggle menu on hamburger click
+//   toggle.addEventListener('click', () => {
+//     const isOpen = menu.classList.toggle('show');       // add/remove .show
+//     toggle.setAttribute('aria-expanded', isOpen);       // accessibility
+//     // Optional: change icon from ☰ to ✖
+//     toggle.textContent = isOpen ? '✖' : '☰';
+//   });
 
-  // Close menu when any link clicked (for SPA behaviour or anchor links)
-  if (menuLinks.length) {
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('show');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
-    });
-  }
-
-
+//   // Close menu when any link clicked (for SPA behaviour or anchor links)
+//   if (menuLinks.length) {
+//     menuLinks.forEach(link => {
+//       link.addEventListener('click', () => {
+//         menu.classList.remove('show');
+//         toggle.setAttribute('aria-expanded', 'false');
+//         toggle.textContent = '☰';
+//       });
+//     });
+//   }
 
 
 
-  // Optional: close menu if user taps/clicks outside the nav when open
-  document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('show')) return;
-    if (!e.target.closest('nav')) {
-      menu.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+
+
+//   // Optional: close menu if user taps/clicks outside the nav when open
+//   document.addEventListener('click', (e) => {
+//     if (!menu.classList.contains('show')) return;
+//     if (!e.target.closest('nav')) {
+//       menu.classList.remove('show');
+//       toggle.setAttribute('aria-expanded', 'false');
+//       toggle.textContent = '☰';
+//     }
+//   });
+
+//   // Optional: allow keyboard toggle via Enter/Space when focused
+//   toggle.addEventListener('keydown', (e) => {
+//     if (e.key === 'Enter' || e.key === ' ') {
+//       e.preventDefault();
+//       toggle.click();
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const rowsPerPage = 10;
+    const tableBody = document.getElementById("SirpanchSectionTableBody");
+    const rows = tableBody.querySelectorAll("tr");
+    const pagination = document.getElementById("pagination");
+
+    let currentPage = 1;
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+    function showPage(page) {
+        currentPage = page;
+
+        rows.forEach((row, index) => {
+            row.style.display =
+                index >= (page - 1) * rowsPerPage &&
+                index < page * rowsPerPage
+                    ? ""
+                    : "none";
+        });
+
+        renderPagination();
     }
-  });
 
-  // Optional: allow keyboard toggle via Enter/Space when focused
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle.click();
+    function renderPagination() {
+        pagination.innerHTML = "";
+
+        // Previous button
+        const prevBtn = document.createElement("button");
+        prevBtn.textContent = "« Prev";
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.onclick = () => showPage(currentPage - 1);
+        pagination.appendChild(prevBtn);
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.className = i === currentPage ? "active" : "";
+            btn.onclick = () => showPage(i);
+            pagination.appendChild(btn);
+        }
+
+        // Next button
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = "Next »";
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.onclick = () => showPage(currentPage + 1);
+        pagination.appendChild(nextBtn);
     }
-  });
+
+    showPage(1);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const rowsPerPage = 10;
+    const tableBody = document.getElementById("priceTableBody");
+    const rows = tableBody.querySelectorAll("tr");
+    const pagination = document.getElementById("pricePagination");
+
+    let currentPage = 1;
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+    function showPage(page) {
+        currentPage = page;
+
+        rows.forEach((row, index) => {
+            row.style.display =
+                index >= (page - 1) * rowsPerPage &&
+                index < page * rowsPerPage
+                    ? ""
+                    : "none";
+        });
+
+        renderPagination();
+    }
+
+    function renderPagination() {
+        pagination.innerHTML = "";
+
+        // Previous button
+        const prevBtn = document.createElement("button");
+        prevBtn.textContent = "« Prev";
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.onclick = () => showPage(currentPage - 1);
+        pagination.appendChild(prevBtn);
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.className = i === currentPage ? "active" : "";
+            btn.onclick = () => showPage(i);
+            pagination.appendChild(btn);
+        }
+
+        // Next button
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = "Next »";
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.onclick = () => showPage(currentPage + 1);
+        pagination.appendChild(nextBtn);
+    }
+
+    showPage(1);
+});
+
+
 </script>
 
    
