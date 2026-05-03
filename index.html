@@ -590,7 +590,33 @@
     }
 }
 
+#visitorSticky {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    width: 120px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
 
+.visitor-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#visitorCountBox {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
 
 
 
@@ -605,6 +631,12 @@
 </head>
 
 <body>
+
+
+     <div id="visitorSticky">
+    <div class="visitor-title">👁️ Visitors</div>
+    <div id="visitorCountBox">Loading...</div>
+</div>
 
      <div class="top-bar-first">
     <div class="contact-info-one">
@@ -1386,7 +1418,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-</script>       
+</script> 
+<script>
+// fetch('https://api.countapi.xyz/hit/songir-grampanchayat/visits')
+//   .then(response => response.json())
+//   .then(data => {
+//     document.getElementById('visitorCount').innerText = data.value;
+//   })
+//   .catch(() => {
+//     document.getElementById('visitorCount').innerText = 'Error';
+//   });
+
+// fetch('https://api.countapi.xyz/hit/songir-grampanchayat/visits')
+//   .then(response => response.json())
+//   .then(data => {
+//     document.getElementById('visitorCount').innerText = data.value;
+//     document.getElementById('visitorCountBox').innerText = data.value;
+//   })
+//   .catch(() => {
+//     document.getElementById('visitorCount').innerText = 'Error';
+//     document.getElementById('visitorCountBox').innerText = 'Error';
+//   });
+
+
+fetch('https://count.cab/hit/songir-grampanchayat/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitorCount').innerText = data.count;
+    document.getElementById('visitorCountBox').innerText = data.count;
+  })
+  .catch(() => {
+    document.getElementById('visitorCount').innerText = 'Error';
+    document.getElementById('visitorCountBox').innerText = 'Error';
+  });
+
+</script>
+    
 </body>
 
 </html>
