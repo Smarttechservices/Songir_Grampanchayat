@@ -286,9 +286,10 @@
 
 /* Banner Box */
 .banner-box {
-  background: linear-gradient(90deg,orange,red);
-  width: 90%;
-  max-width: 950px;
+  background: linear-gradient(135deg,rgb(1, 50, 90),rgb(32, 200, 230));
+  width: 100%;
+  max-width: 850px;
+  /* height: auto; */
   min-width: 850px;
   padding: 40px 30px;
   border-radius: 12px;
@@ -330,10 +331,10 @@
 }
 
 /* Button */
-#inaugurateBtn {
+/* #inaugurateBtn {
   padding: 12px 30px;
   font-size: 18px;
-  background: #75da9d;
+  background: #cc1717;
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -342,7 +343,71 @@
 }
 
 #inaugurateBtn:hover {
-  background: #145c3c;
+  background: #125034;
+} */
+
+#inaugurateBtn {
+    position: relative;
+    background: linear-gradient(135deg, #a11d1d, #810a0a);
+    color: white;
+    border: 2px solid gold;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+#inaugurateBtn:hover {
+    background: #a11d1d;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+}
+
+/* Popup Message */
+#inaugurateBtn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translate(-50%, 15px) scale(0.8);
+    background: linear-gradient(135deg, #fff8dc, #ffffff);
+    color: #a11d1d;
+    padding: 12px 20px;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 99999;
+}
+
+/* Popup Arrow */
+#inaugurateBtn::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: #d4af37;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+/* Show Popup */
+#inaugurateBtn:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+}
+
+#inaugurateBtn:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Overlay Effects Container */
@@ -588,6 +653,52 @@
         border-radius: 4px;
         display: block;
     }
+
+
+
+    /* Make the banner overlay padding tighter on small screens */
+  .banner-overlay {
+    padding: 10px;
+  }
+
+  /* Reset fixed/min widths so it fits mobile screens nicely */
+  .banner-box {
+    width: 95% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 20px 15px !important;
+    border-width: 4px !important; /* Thinner dashed border for mobile */
+    max-height: 85vh;             
+    overflow-y: auto;             /* Enable scrolling inside box if content is tall */
+  }
+
+  /* Scale down the main banner image */
+  .banner-box img {
+    width: 100% !important;
+    height: auto !important;     /* Maintain aspect ratio */
+    max-height: 400px !important; /* Restrict height so it doesn't push buttons out of view */
+    object-fit: contain;
+  }
+
+  /* Adjust Diya and flower font sizes for mobile */
+  .diya-container {
+    font-size: 24px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .flowers span {
+    font-size: 18px !important;
+  }
+
+  /* Scale down the button */
+  #inaugurateBtn {
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+  }
+
+
+
+
 }
 
 #visitorSticky {
@@ -619,6 +730,497 @@
 }
 
 
+
+
+
+/* PREMIUM INAUGURATION BUTTON */
+
+.premium-inaugurate-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 14px 38px;
+    min-width: 245px;
+
+    color: #fff;
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 900;
+
+    background: linear-gradient(
+        135deg,
+        #ffdf76 0%,
+        #ff9d00 25%,
+        #ed1c24 65%,
+        #a90000 100%
+    );
+
+    border: 3px solid #fff0a6;
+    border-radius: 50px;
+
+    box-shadow:
+        0 5px 0 #8c1700,
+        0 8px 18px rgba(0,0,0,0.35),
+        0 0 15px #ffdb65,
+        0 0 30px rgba(255, 180, 0, 0.6);
+
+    text-shadow: 1px 2px 3px rgba(80,0,0,0.7);
+
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    animation: premiumButtonGlow 1.6s infinite alternate;
+}
+
+/* Moving Shine Effect */
+
+.premium-inaugurate-btn::before {
+    content: "";
+    position: absolute;
+
+    top: -50%;
+    left: -100%;
+
+    width: 60%;
+    height: 200%;
+
+    background: rgba(255,255,255,0.35);
+
+    transform: rotate(25deg);
+
+    animation: buttonShine 3s infinite;
+}
+
+/* Button Hover */
+
+.premium-inaugurate-btn:hover {
+    transform: translateY(-5px) scale(1.06);
+
+    background: linear-gradient(
+        135deg,
+        #fff1a8,
+        #ff9d00,
+        #ed1c24
+    );
+
+    box-shadow:
+        0 8px 0 #8c1700,
+        0 12px 25px rgba(0,0,0,0.4),
+        0 0 25px #ffe36a;
+}
+
+/* Click Effect */
+
+.premium-inaugurate-btn:active {
+    transform: translateY(3px) scale(0.97);
+    box-shadow: 0 2px 0 #8c1700;
+}
+
+/* Icon */
+
+.btn-icon {
+    font-size: 23px;
+    animation: iconSparkle 1.2s infinite alternate;
+}
+
+/* Text */
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Arrow Circle */
+
+.btn-arrow {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    color: #b00000;
+    background: #fff;
+
+    border-radius: 50%;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    animation: arrowMove 0.8s infinite alternate;
+}
+
+/* Animations */
+
+@keyframes premiumButtonGlow {
+    from {
+        box-shadow:
+            0 5px 0 #8c1700,
+            0 0 10px #ffdc65;
+    }
+
+    to {
+        box-shadow:
+            0 5px 0 #8c1700,
+            0 0 22px #fff0a0,
+            0 0 35px #ff6600;
+    }
+}
+
+@keyframes buttonShine {
+    0% {
+        left: -100%;
+    }
+
+    50%, 100% {
+        left: 150%;
+    }
+}
+
+@keyframes arrowMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes iconSparkle {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.25) rotate(15deg);
+    }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+    .premium-inaugurate-btn {
+        min-width: 190px;
+        padding: 10px 23px;
+        font-size: 18px;
+        gap: 9px;
+    }
+
+    .btn-icon {
+        font-size: 19px;
+    }
+
+    .btn-arrow {
+        width: 27px;
+        height: 27px;
+        font-size: 19px;
+    }
+}
+
+
+
+/* WELCOME HEADING MAIN SECTION */
+
+.welcome-heading {
+    position: relative;
+    text-align: center;
+    padding: 15px 10px 20px;
+    animation: headingEntrance 1.2s ease-out both;
+}
+
+/* Small Badge */
+
+.welcome-badge {
+    display: inline-block;
+    padding: 7px 25px;
+    margin-bottom: 15px;
+
+    color: #8b1600;
+    background: linear-gradient(90deg, #fff2b0, #ffd45b, #fff2b0);
+
+    border: 2px solid #fff;
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    box-shadow: 0 0 15px #ffe58a;
+
+    animation: badgeGlow 2s infinite alternate;
+}
+
+/* Main Heading */
+
+.welcome-title {
+    color: #fff8c9;
+    font-size: 37px;
+    font-weight: 900;
+    line-height: 1.5;
+
+    text-shadow:
+        2px 3px 0 #a52a00,
+        0 0 10px #ffdf70,
+        0 0 22px #ff8c00;
+
+    animation: titleGlow 2s infinite alternate;
+}
+
+/* Decorative Symbols */
+
+.title-decoration {
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffe47b;
+    font-size: 27px;
+
+    animation: decorationSpin 5s linear infinite;
+}
+
+/* Welcome Subtitle */
+
+.welcome-subtitle {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 900;
+
+    margin: 5px 0 20px;
+
+    text-shadow:
+        2px 2px 4px #9d1500,
+        0 0 12px #ffd45b;
+
+    animation: subtitleSlide 1.5s ease-out both;
+}
+
+/* Opening Ceremony Title */
+
+.opening-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: fit-content;
+    max-width: 100%;
+
+    margin: 0 auto;
+    padding: 10px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #a50000,
+        #ed2929,
+        #a50000
+    );
+
+    border: 3px solid #ffe18a;
+    border-radius: 50px;
+
+    box-shadow:
+        0 0 12px #fff0a0,
+        0 0 25px #ff6700;
+
+    animation: ceremonyPulse 1.8s infinite alternate;
+}
+
+/* Opening Ceremony Text */
+
+.opening-text {
+    color: #fff5b5;
+    font-size: 27px;
+    font-weight: 900;
+
+    text-shadow: 2px 2px 3px #650000;
+}
+
+/* Diyas */
+
+.opening-icon {
+    font-size: 25px;
+    animation: diyaAnimation 1s infinite alternate;
+}
+
+/* Decorative Lines */
+
+.opening-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffe58a,
+        transparent
+    );
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes headingEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+    }
+
+    70% {
+        transform: translateY(5px) scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes badgeGlow {
+    from {
+        box-shadow: 0 0 8px #ffe58a;
+    }
+
+    to {
+        box-shadow: 0 0 22px #fff, 0 0 30px #ffcc33;
+    }
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow:
+            2px 3px 0 #a52a00,
+            0 0 8px #ffdf70;
+    }
+
+    to {
+        text-shadow:
+            2px 3px 0 #a52a00,
+            0 0 15px #fff2a0,
+            0 0 28px #ffb300;
+    }
+}
+
+@keyframes subtitleSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes decorationSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ceremonyPulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 10px #ffe58a;
+    }
+
+    to {
+        transform: scale(1.04);
+        box-shadow: 0 0 22px #fff, 0 0 30px #ff7800;
+    }
+}
+
+@keyframes diyaAnimation {
+    from {
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        transform: translateY(-5px) scale(1.15);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .welcome-title {
+        font-size: 27px;
+    }
+
+    .welcome-subtitle {
+        font-size: 20px;
+    }
+
+    .opening-text {
+        font-size: 21px;
+    }
+
+    .welcome-badge {
+        font-size: 14px;
+    }
+
+    .opening-icon {
+        font-size: 19px;
+    }
+
+    .opening-line {
+        width: 20px;
+    }  
+
+
+
+}
+
+@media (max-width: 480px) {
+
+    .welcome-heading {
+        padding: 10px 5px 15px;
+    }
+
+    .welcome-title {
+        font-size: 21px;
+    }
+
+    .welcome-subtitle {
+        font-size: 16px;
+    }
+
+    .opening-title {
+        gap: 6px;
+        padding: 8px 12px;
+    }
+
+    .opening-text {
+        font-size: 17px;
+    }
+
+    .opening-icon {
+        font-size: 16px;
+    }
+
+    .opening-line {
+        width: 12px;
+    }
+
+    .title-decoration {
+        font-size: 17px;
+        padding: 0 4px;
+    }
+}
 
 
 
@@ -1027,11 +1629,12 @@
       🪔 🪔 🪔🪔 🪔 🪔🪔 🪔 🪔 🪔🪔 
     </div> -->
     <div></div>
-
+<!-- 
     <h1><strong>सोनगीर ग्रामपंचायत आपले हार्दिक स्वागत करत आहे...</strong></h1>
-    <h2><strong>उद्घाटन समारंभ</strong></h2>
-    <img src="images/Places/DemoImage.png" style="width: 80%; height: 350px;">
-    <h2><strong>शुभ हस्ते उद्घाटन</strong></h2>
+    <h2><strong>उद्घाटन समारंभ</strong></h2> -->
+    <!-- <img src="images/Places/DemoImage.png" style="width: 80%; height: 350px;"> -->
+    <img src="images/BannerImage1.jpeg" style="width: 100%; height: 700px;">
+    <!-- <h2><strong>शुभ हस्ते उद्घाटन</strong></h2>
     <p class="guest-name">
       मा.रामदादा भदाणे आमदार साहेब 
       ( धुळे – सोनगीर विधानसभा मतदारसंघ )
@@ -1042,10 +1645,26 @@
     </p>
     <p class="message">
       लोकसहभागातून समृद्ध आणि विकसित गावाकडे वाटचाल
-    </p>
-    <img src="images/Places/GrandOpeningImg1.png" style="width: 95%; height: 100px;">
+    </p> -->
+    <!-- <img src="images/Places/GrandOpeningImg1.png" style="width: 95%; height: 50px;"> -->
 
-    <button id="inaugurateBtn">उद्घाटन करा</button>
+    <!-- <button id="inaugurateBtn" style=" margin-top: 8px;">उद्घाटन करा <span>&rarr;</span></button> -->
+    <a href="index.html">
+      <!-- <button id="inaugurateBtn" class="btn btn-lg" style="margin-top: 12px; margin-right: 5px; font-weight: bold;">उद्घाटन करा <span style="color: #ff0055; background-color: #fff; font-size: 24px; font-weight: bold; padding:0px 4px; border: 1px solid white; border-radius: 16px;">➔</span>
+      </button> -->
+      <button id="inaugurateBtn"
+        class="btn btn-lg"
+        data-tooltip="🎉 उद्घाटन करण्यासाठी येथे क्लिक करा!"
+        onclick="closeInaugurationBanner()"
+        style="margin-top: 12px; margin-right: 5px; font-weight: bold;">
+
+    उद्घाटन करा
+
+    <span style="color: #ff0055; background-color: #fff; font-size: 24px; font-weight: bold; padding:0px 4px; border: 1px solid white; border-radius: 16px;">
+        ➔
+    </span>
+</button>
+    </a>
 
      <div>
           <div class="diya-container float-center">
@@ -1057,7 +1676,6 @@
      </div>
   </div>
 </div>
-
 
 
 
